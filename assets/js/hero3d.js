@@ -41,11 +41,11 @@ function init(canvas) {
   group.add(drop);
 
   /* golden core glow inside the drop */
-  const core = new THREE.Mesh(new THREE.SphereGeometry(0.55, 32, 32), new THREE.MeshBasicMaterial({ color: 0xf3c866, transparent: true, opacity: 0.55 }));
+  const core = new THREE.Mesh(new THREE.SphereGeometry(0.4, 32, 32), new THREE.MeshBasicMaterial({ color: 0xf3c866, transparent: true, opacity: 0.18 }));
   core.position.y = -0.55; drop.add(core);
 
   /* ---- water ripples ---- */
-  const rippleY = -3.3;
+  const rippleY = -2.7;
   const ripples = [];
   for (let i = 0; i < 4; i++) {
     const m = new THREE.Mesh(
