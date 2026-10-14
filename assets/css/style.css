@@ -619,3 +619,5 @@ html, body { overflow-x: clip; }
 .hero__photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,23,26,.96) 0%, rgba(8,23,26,.78) 38%, rgba(8,23,26,.25) 75%, rgba(8,23,26,.45) 100%), linear-gradient(180deg, rgba(8,23,26,.55) 0%, transparent 25%, transparent 70%, rgba(8,23,26,.9) 100%); }
 @keyframes kenburns { to { transform: scale(1.2) translate3d(-2%, -1.5%, 0); } }
 @media (max-width: 899px) { .hero__photo img { object-position: 62% 50%; opacity: .5; } .hero__photo::after { background: linear-gradient(180deg, rgba(8,23,26,.7) 0%, rgba(8,23,26,.55) 45%, rgba(8,23,26,.92) 100%); } }
+
+.hero__fallback i:nth-child(1) { width: 220px; height: 300px; right: 14%; top: 18%; border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(circle at 35% 30%, #fff7e0, var(--gold-2) 30%, var(--gold) 65%, var(--gold-3)); }
