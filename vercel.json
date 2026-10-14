@@ -1,0 +1,40 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/skin-care",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/services/:slug",
+      "destination": "/service-:slug",
+      "permanent": true
+    },
+    {
+      "source": "/eye-brow",
+      "destination": "/service-lip-and-eye-treatment",
+      "permanent": true
+    },
+    {
+      "source": "/category/:slug",
+      "destination": "/shop",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/service-page/:slug",
+      "destination": "/service-:slug",
+      "permanent": true
+    }
+  ]
+}
