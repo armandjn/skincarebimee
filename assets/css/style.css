@@ -621,3 +621,9 @@ html, body { overflow-x: clip; }
 @media (max-width: 899px) { .hero__photo img { object-position: 62% 50%; opacity: .5; } .hero__photo::after { background: linear-gradient(180deg, rgba(8,23,26,.7) 0%, rgba(8,23,26,.55) 45%, rgba(8,23,26,.92) 100%); } }
 
 .hero__fallback i:nth-child(1) { width: 220px; height: 300px; right: 14%; top: 18%; border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; background: radial-gradient(circle at 35% 30%, #fff7e0, var(--gold-2) 30%, var(--gold) 65%, var(--gold-3)); }
+@media (max-width: 899px) {
+  .float-chip { padding: .6rem .9rem; font-size: .8rem; }
+  .float-chip .ico { width: 34px; height: 34px; }
+  .float-chip.c1 { left: 6px; bottom: 14%; top: auto; }
+  .float-chip.c2 { right: 6px; left: auto; top: auto; bottom: 4%; }
+}
