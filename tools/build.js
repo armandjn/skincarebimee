@@ -93,7 +93,7 @@ function footer() {
     <h2 class="display">Be your own kind of <em class="gold-text">beautiful</em></h2>
     <div>
       <p style="margin-bottom:1rem">Stay with us — skincare news and offers from Bimee.</p>
-      <form class="news" data-mailto data-subject="Newsletter sign-up" novalidate aria-label="Newsletter sign-up">
+      <form class="news" data-mailto data-api="/api/subscribe" data-success="You are on the list — thank you!" data-subject="Newsletter sign-up" novalidate aria-label="Newsletter sign-up">
         <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
         <button class="btn btn--gold btn--sm" type="submit">Sign up</button>
       </form>
@@ -413,7 +413,7 @@ ${ctaBand('Start with a free consultation', 'Fifteen minutes. No cost. Real answ
   <div class="scene-col reveal">${giftCardHTML('$100')}
     <div style="text-align:center;margin-top:2rem"><button type="button" id="flip" class="btn btn--line btn--sm">Flip card</button></div>
     <p class="form-note" style="text-align:center;margin-top:1rem">Move your mouse over the card — or flip it to preview your message.</p></div>
-  <form class="builder reveal" id="gift-form" data-mailto data-subject="Gift card order" data-extra="giftExtra" novalidate>
+  <form class="builder reveal" id="gift-form" data-mailto data-api="/api/gift" data-subject="Gift card order" data-extra="giftExtra" novalidate>
     <div><span class="label">Amount</span><div class="amounts" style="margin-top:.6rem" role="radiogroup" aria-label="Amount">
       <label class="amount"><input type="radio" name="amount" value="50"><span>$50</span></label><label class="amount"><input type="radio" name="amount" value="100" checked><span>$100</span></label><label class="amount"><input type="radio" name="amount" value="150"><span>$150</span></label></div></div>
     <div class="form-grid form-grid--2"><div class="field"><label for="to">Recipient name</label><input id="to" name="recipient_name" maxlength="24" placeholder="Jane"></div><div class="field"><label for="from">From</label><input id="from" name="from" maxlength="24" placeholder="Your name"></div></div>
@@ -435,7 +435,7 @@ ${ctaBand('Start with a free consultation', 'Fifteen minutes. No cost. Real answ
   const slots = ['Morning', 'Afternoon', 'Evening', 'Flexible'];
   const body = `${pageHero({ eyebrow: 'Book online', title: 'Reserve your <em class="gold-text">moment</em>', lead: 'Choose a treatment and your preferred time. We will confirm your appointment by phone or email.', crumbs: [['Book Online']], bg: 'hallway.jpg' })}
 <section class="section"><div class="container">
-<form id="book-form" class="book-layout" data-mailto data-subject="Appointment request" data-extra="bookExtra" novalidate>
+<form id="book-form" class="book-layout" data-mailto data-api="/api/book" data-subject="Appointment request" data-extra="bookExtra" novalidate>
   <div class="form" style="gap:2.2rem">
     <div><h3 style="margin-bottom:1rem">1 · Choose a service</h3><div class="choice-grid">${bookable.map((s, i) => `<label class="choice"><input type="radio" name="service" value="${s.slug}" data-price="${s.price}" data-dur="${s.dur}" data-label="${s.name}"${i === 0 ? ' checked' : ''}><span class="choice__body"><span class="ico">${ic(s.icon)}</span><span><b>${s.name}</b><small>${s.dur}</small></span><span class="p">${money(s.price)}</span></span></label>`).join('')}</div></div>
     <div><h3 style="margin-bottom:1rem">2 · Pick a date &amp; time</h3>
@@ -497,7 +497,7 @@ function postCard(p, i = 0) {
     <div class="info-row"><span class="ico">${ic('mail')}</span><div><small>Email</small><a href="mailto:${SITE.email}">${SITE.email}</a></div></div>
     <div class="socials" style="color:var(--text)"><a href="${SITE.instagram}" aria-label="Instagram" target="_blank" rel="noopener" style="border-color:var(--line)">${ic('instagram')}</a><a href="${SITE.youtube}" aria-label="YouTube" target="_blank" rel="noopener" style="border-color:var(--line)">${ic('youtube')}</a></div>
   </div>
-  <form class="builder reveal" data-mailto data-subject="Website enquiry" novalidate>
+  <form class="builder reveal" data-mailto data-api="/api/contact" data-subject="Website enquiry" novalidate>
     <h3>Send a message</h3>
     <div class="form-grid form-grid--2"><div class="field"><label for="c-fn">First name</label><input id="c-fn" name="first_name" required autocomplete="given-name"></div><div class="field"><label for="c-ln">Last name</label><input id="c-ln" name="last_name" required autocomplete="family-name"></div></div>
     <div class="field"><label for="c-em">Email</label><input id="c-em" name="email" type="email" required autocomplete="email"></div>

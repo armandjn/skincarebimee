@@ -101,7 +101,7 @@
 </div></div>
     <div style="text-align:center;margin-top:2rem"><button type="button" id="flip" class="btn btn--line btn--sm">Flip card</button></div>
     <p class="form-note" style="text-align:center;margin-top:1rem">Move your mouse over the card — or flip it to preview your message.</p></div>
-  <form class="builder reveal" id="gift-form" data-mailto data-subject="Gift card order" data-extra="giftExtra" novalidate>
+  <form class="builder reveal" id="gift-form" data-mailto data-api="/api/gift" data-subject="Gift card order" data-extra="giftExtra" novalidate>
     <div><span class="label">Amount</span><div class="amounts" style="margin-top:.6rem" role="radiogroup" aria-label="Amount">
       <label class="amount"><input type="radio" name="amount" value="50"><span>$50</span></label><label class="amount"><input type="radio" name="amount" value="100" checked><span>$100</span></label><label class="amount"><input type="radio" name="amount" value="150"><span>$150</span></label></div></div>
     <div class="form-grid form-grid--2"><div class="field"><label for="to">Recipient name</label><input id="to" name="recipient_name" maxlength="24" placeholder="Jane"></div><div class="field"><label for="from">From</label><input id="from" name="from" maxlength="24" placeholder="Your name"></div></div>
@@ -121,7 +121,7 @@
     <h2 class="display">Be your own kind of <em class="gold-text">beautiful</em></h2>
     <div>
       <p style="margin-bottom:1rem">Stay with us — skincare news and offers from Bimee.</p>
-      <form class="news" data-mailto data-subject="Newsletter sign-up" novalidate aria-label="Newsletter sign-up">
+      <form class="news" data-mailto data-api="/api/subscribe" data-success="You are on the list — thank you!" data-subject="Newsletter sign-up" novalidate aria-label="Newsletter sign-up">
         <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
         <button class="btn btn--gold btn--sm" type="submit">Sign up</button>
       </form>

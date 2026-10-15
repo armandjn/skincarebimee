@@ -1,0 +1,7 @@
+/home / 301
+/skin-care /services 301
+/eye-brow /service-lip-and-eye-treatment 301
+/services/:slug /service-:slug 301
+/service-page/:slug /service-:slug 301
+/category/:slug /shop 301
+/blog/:slug /blog 301

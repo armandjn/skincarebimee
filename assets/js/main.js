@@ -142,20 +142,36 @@
     });
   }
 
-  /* ---- mailto forms (static site: composes an email in the visitor's mail app) ---- */
+  /* ---- Forms: POST to /api/* (Cloudflare Pages Functions + D1); fall back to a prefilled email ---- */
   $$('form[data-mailto]').forEach(function (form) {
+    var hp = doc.createElement('input');
+    hp.type = 'text'; hp.name = 'website'; hp.tabIndex = -1; hp.autocomplete = 'off'; hp.setAttribute('aria-hidden', 'true');
+    hp.style.cssText = 'position:absolute;left:-9999px;opacity:0;height:0;width:0';
+    form.appendChild(hp);
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      var data = new FormData(form), lines = [];
+      var data = new FormData(form), lines = [], obj = {};
       var subject = form.getAttribute('data-subject') || 'Website enquiry';
-      data.forEach(function (v, k) { if (v && k.charAt(0) !== '_') lines.push(k.replace(/_/g, ' ') + ': ' + v); });
+      data.forEach(function (v, k) { obj[k] = v; if (v && k.charAt(0) !== '_' && k !== 'website') lines.push(k.replace(/_/g, ' ') + ': ' + v); });
       var extra = form.getAttribute('data-extra');
-      if (extra && window[extra]) lines = lines.concat(window[extra]());
-      var href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
-      var status = $('.form-status', form);
-      if (status) status.classList.add('is-visible');
-      window.location.href = href;
+      if (extra && window[extra]) { var ex = window[extra](); lines = lines.concat(ex.lines); Object.assign(obj, ex.data); }
+      var status = $('.form-status', form), btn = $('button[type="submit"]', form);
+      var mailFallback = function () {
+        window.location.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+        if (status) { status.textContent = 'Your email app should open with the details pre-filled — please send it and we will be in touch.'; status.classList.add('is-visible'); }
+      };
+      var api = form.getAttribute('data-api');
+      if (!api || !window.fetch || location.protocol === 'file:') { mailFallback(); return; }
+      if (btn) btn.disabled = true;
+      fetch(api, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(obj) })
+        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok && j.ok }; }); })
+        .then(function (res) {
+          if (!res.ok) throw new Error('fail');
+          if (status) { status.textContent = form.getAttribute('data-success') || 'Thank you! We have received your request and will be in touch shortly.'; status.classList.add('is-visible'); }
+        })
+        .catch(mailFallback)
+        .then(function () { if (btn) btn.disabled = false; });
     });
   });
 
@@ -182,7 +198,7 @@
     var q = new URLSearchParams(location.search).get('service');
     if (q) { var pre = $('input[name="service"][value="' + q.replace(/[^a-z-]/g, '') + '"]', book); if (pre) pre.checked = true; }
     refresh();
-    window.bookExtra = function () { return ['price: ' + sTot.textContent, 'duration: ' + sDur.textContent]; };
+    window.bookExtra = function () { var s = $('input[name="service"]:checked', book); return { lines: ['price: ' + sTot.textContent, 'duration: ' + sDur.textContent], data: { service: s ? s.value : '' } }; };
   }
 
   /* ---- Gift card builder ---- */
@@ -203,7 +219,7 @@
     $('#qty-minus').addEventListener('click', function () { qty = Math.max(1, qty - 1); update(); });
     $('#qty-plus').addEventListener('click', function () { qty = Math.min(10, qty + 1); update(); });
     $('#flip').addEventListener('click', function () { $('.gcard').classList.toggle('is-flipped'); });
-    window.giftExtra = function () { return ['quantity: ' + qty, 'total: ' + totalOut.textContent]; };
+    window.giftExtra = function () { return { lines: ['quantity: ' + qty, 'total: ' + totalOut.textContent], data: { quantity: qty } }; };
     update();
   }
   /* gift card 3D follow-pointer */
