@@ -100,7 +100,7 @@
     <div class="info-row"><span class="ico"><svg class="" aria-hidden="true"><use href="#i-mail"/></svg></span><div><small>Email</small><a href="mailto:skincarebimee@gmail.com">skincarebimee@gmail.com</a></div></div>
     <div class="socials" style="color:var(--text)"><a href="https://www.instagram.com/skincarebimee" aria-label="Instagram" target="_blank" rel="noopener" style="border-color:var(--line)"><svg class="" aria-hidden="true"><use href="#i-instagram"/></svg></a><a href="https://www.youtube.com/@skincarebimee" aria-label="YouTube" target="_blank" rel="noopener" style="border-color:var(--line)"><svg class="" aria-hidden="true"><use href="#i-youtube"/></svg></a></div>
   </div>
-  <form class="builder reveal" data-mailto data-subject="Website enquiry" novalidate>
+  <form class="builder reveal" data-mailto data-api="/api/contact" data-subject="Website enquiry" novalidate>
     <h3>Send a message</h3>
     <div class="form-grid form-grid--2"><div class="field"><label for="c-fn">First name</label><input id="c-fn" name="first_name" required autocomplete="given-name"></div><div class="field"><label for="c-ln">Last name</label><input id="c-ln" name="last_name" required autocomplete="family-name"></div></div>
     <div class="field"><label for="c-em">Email</label><input id="c-em" name="email" type="email" required autocomplete="email"></div>
@@ -116,7 +116,7 @@
     <h2 class="display">Be your own kind of <em class="gold-text">beautiful</em></h2>
     <div>
       <p style="margin-bottom:1rem">Stay with us — skincare news and offers from Bimee.</p>
-      <form class="news" data-mailto data-subject="Newsletter sign-up" novalidate aria-label="Newsletter sign-up">
+      <form class="news" data-mailto data-api="/api/subscribe" data-success="You are on the list — thank you!" data-subject="Newsletter sign-up" novalidate aria-label="Newsletter sign-up">
         <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
         <button class="btn btn--gold btn--sm" type="submit">Sign up</button>
       </form>
