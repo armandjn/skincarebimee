@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin | Skincare Bimee</title>
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#08171a;--gold:#c9a24c;--gold2:#ecd596;--ivory:#fbf7f0;--cream:#f2eadd;--line:rgba(27,42,39,.14);--text:#1b2a27;--muted:#5e6e68}
+*{box-sizing:border-box}body{margin:0;font-family:Jost,system-ui,sans-serif;background:var(--ivory);color:var(--text);line-height:1.5}
+h1{font-family:"Cormorant Garamond",serif;font-weight:600;margin:0}
+button,input,select{font:inherit}
+.login{min-height:100vh;display:grid;place-items:center;background:radial-gradient(800px 500px at 80% 0,rgba(29,90,80,.8),transparent 60%),var(--ink);padding:1.2rem}
+.card{background:#fff;border-radius:22px;padding:2rem;width:min(100%,380px);box-shadow:0 30px 60px -28px rgba(0,0,0,.6);display:grid;gap:1rem}
+.card h1{font-size:2rem}.card p{margin:0;color:var(--muted);font-size:.95rem}
+input[type=password],input[type=search]{width:100%;padding:.8rem 1rem;border:1.5px solid var(--line);border-radius:12px;background:var(--ivory)}
+input:focus,select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,162,76,.2)}
+.btn{border:0;border-radius:999px;padding:.75rem 1.4rem;background:linear-gradient(135deg,#f3dc9c,#c9a24c 45%,#96722a);color:var(--ink);font-weight:500;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+.err{color:#a3281f;font-size:.9rem;min-height:1.2em}
+header{background:var(--ink);color:var(--ivory);padding:1rem 1.2rem;display:flex;gap:1rem;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:5;flex-wrap:wrap}
+header h1{font-size:1.6rem}header h1 small{font-family:Jost;font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold2);margin-left:.6rem}
+.bar{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+header .btn.ghost{color:var(--ivory);border-color:rgba(255,255,255,.3)}
+main{max-width:1200px;margin:0 auto;padding:1.2rem}
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
+.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:.55rem 1.1rem;cursor:pointer;font-size:.9rem}
+.tab.on{background:var(--ink);color:var(--gold2);border-color:var(--ink)}
+.tab b{margin-left:.4rem;background:var(--gold);color:var(--ink);border-radius:999px;padding:0 .5rem;font-size:.75rem}
+.tools{display:flex;gap:.6rem;margin-bottom:1rem;flex-wrap:wrap}.tools input{max-width:340px}
+.list{display:grid;gap:.8rem}
+.row{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1rem 1.1rem;display:grid;gap:.5rem}
+.row.new,.row.pending_payment{border-left:4px solid var(--gold)}
+.top{display:flex;justify-content:space-between;gap:1rem;align-items:flex-start;flex-wrap:wrap}
+.name{font-family:"Cormorant Garamond",serif;font-size:1.35rem;font-weight:600}
+.meta{display:flex;gap:1.2rem;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+.meta b{color:var(--text);font-weight:500}
+.note{background:var(--cream);border-radius:10px;padding:.6rem .8rem;font-size:.92rem;white-space:pre-wrap;word-break:break-word}
+.act{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+select{padding:.45rem .7rem;border:1.5px solid var(--line);border-radius:10px;background:var(--ivory)}
+a{color:#7a5a17}.del{background:none;border:0;color:#a3281f;cursor:pointer;font-size:.85rem}
+.empty{text-align:center;color:var(--muted);padding:3rem 1rem;border:1.5px dashed var(--line);border-radius:16px}
+.badge{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .6rem;border-radius:999px;background:var(--cream)}
+.badge.new,.badge.pending_payment{background:rgba(201,162,76,.25)}
+.badge.confirmed,.badge.paid,.badge.replied,.badge.sent,.badge.completed{background:rgba(29,90,80,.18)}
+.badge.cancelled,.badge.archived{background:#eee;color:#777}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<section class="login" id="login">
+  <form class="card" id="loginForm">
+    <h1>Skincare Bimee</h1><p>Admin panel — sign in to view bookings and messages.</p>
+    <input type="password" id="pw" placeholder="Password" autocomplete="current-password" required autofocus>
+    <div class="err" id="err" role="alert"></div>
+    <button class="btn" type="submit">Sign in</button>
+  </form>
+</section>
+<div id="app" hidden>
+  <header><h1>Admin<small>Skincare Bimee</small></h1>
+    <div class="bar"><button class="btn ghost" id="refresh">Refresh</button><button class="btn ghost" id="csv">Export CSV</button><button class="btn ghost" id="logout">Sign out</button></div></header>
+  <main>
+    <div class="tabs" id="tabs"></div>
+    <div class="tools"><input type="search" id="q" placeholder="Search name, email, phone…"><select id="filter"></select></div>
+    <div class="list" id="list"></div>
+  </main>
+</div>
+<script>
+(function () {
+  var TABS = [['bookings', 'Bookings'], ['contacts', 'Messages'], ['gift_orders', 'Gift cards'], ['subscribers', 'Subscribers']];
+  var data = {}, cur = 'bookings', $ = function (s) { return document.querySelector(s); };
+  var MAP = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return MAP[c]; }); };
+  function api(path, opt) {
+    return fetch(path, Object.assign({ credentials: 'same-origin', headers: { 'content-type': 'application/json' } }, opt))
+      .then(function (r) { return r.json().then(function (j) { j._status = r.status; return j; }); });
+  }
+  function show(on) { $('#login').hidden = on; $('#app').hidden = !on; }
+  function load() {
+    return api('/api/admin/data').then(function (j) {
+      if (j._status === 401) { show(false); return; }
+      data = j; show(true); render();
+    }).catch(function () { show(false); });
+  }
+  $('#loginForm').addEventListener('submit', function (e) {
+    e.preventDefault(); $('#err').textContent = '';
+    api('/api/admin/login', { method: 'POST', body: JSON.stringify({ password: $('#pw').value }) }).then(function (j) {
+      if (j.ok) { $('#pw').value = ''; load(); } else { $('#err').textContent = j.error || 'Could not sign in'; }
+    }).catch(function () { $('#err').textContent = 'Network error'; });
+  });
+  $('#logout').onclick = function () { api('/api/admin/login', { method: 'DELETE' }).then(function () { show(false); }); };
+  $('#refresh').onclick = load;
+  $('#q').oninput = render; $('#filter').onchange = render;
+
+  function when(s) { var d = new Date(String(s).replace(' ', 'T') + 'Z'); return isNaN(d) ? s : d.toLocaleString(); }
+  function ctl(r) {
+    var sts = (data.statuses || {})[cur];
+    var sel = sts ? '<select data-id="' + r.id + '">' + sts.map(function (s) { return '<option' + (s === r.status ? ' selected' : '') + '>' + s + '</option>'; }).join('') + '</select>' : '';
+    return '<div class="act">' + sel + '<button class="del" data-id="' + r.id + '">Delete</button></div>';
+  }
+  function mail(a) { return a ? '<a href="mailto:' + esc(a) + '">' + esc(a) + '</a>' : ''; }
+  function card(r) {
+    var badge = '<span class="badge ' + esc(r.status) + '">' + esc(String(r.status || '').replace('_', ' ')) + '</span>';
+    if (cur === 'bookings') {
+      return '<div class="row ' + esc(r.status) + '"><div class="top"><div><div class="name">' + esc(r.first_name + ' ' + (r.last_name || '')) + '</div>' + badge + '</div>' + ctl(r) + '</div>' +
+        '<div class="meta"><span>Service: <b>' + esc(r.service) + '</b></span><span>Date: <b>' + esc(r.preferred_date || '—') + '</b></span><span>Time: <b>' + esc(r.preferred_time || '—') + '</b></span></div>' +
+        '<div class="meta">' + mail(r.email) + (r.phone ? '<a href="tel:' + esc(r.phone) + '">' + esc(r.phone) + '</a>' : '') + '<span>' + esc(when(r.created_at)) + '</span></div>' +
+        (r.notes ? '<div class="note">' + esc(r.notes) + '</div>' : '') + '</div>';
+    }
+    if (cur === 'contacts') {
+      return '<div class="row ' + esc(r.status) + '"><div class="top"><div><div class="name">' + esc((r.first_name || '') + ' ' + (r.last_name || '')) + '</div>' + badge + '</div>' + ctl(r) + '</div>' +
+        '<div class="meta">' + mail(r.email) + '<span>' + esc(when(r.created_at)) + '</span></div><div class="note">' + esc(r.message) + '</div></div>';
+    }
+    if (cur === 'gift_orders') {
+      return '<div class="row ' + esc(r.status) + '"><div class="top"><div><div class="name">$' + r.amount + ' × ' + r.quantity + ' = $' + (r.amount * r.quantity) + '</div>' + badge + '</div>' + ctl(r) + '</div>' +
+        '<div class="meta"><span>To: <b>' + esc(r.recipient_name || '—') + '</b> ' + esc(r.recipient_email || '') + '</span><span>From: <b>' + esc(r.from_name || '—') + '</b></span><span>Deliver: <b>' + esc(r.delivery_date || '—') + '</b></span></div>' +
+        '<div class="meta">' + mail(r.your_email) + '<span>' + esc(when(r.created_at)) + '</span></div>' + (r.message ? '<div class="note">' + esc(r.message) + '</div>' : '') + '</div>';
+    }
+    return '<div class="row"><div class="top"><div class="name" style="font-size:1.1rem">' + mail(r.email) + '</div>' + ctl(r) + '</div><div class="meta"><span>' + esc(when(r.created_at)) + '</span></div></div>';
+  }
+  function render() {
+    $('#tabs').innerHTML = TABS.map(function (t) {
+      var n = (data[t[0]] || []).filter(function (r) { return r.status === 'new' || r.status === 'pending_payment'; }).length;
+      return '<button class="tab' + (t[0] === cur ? ' on' : '') + '" data-t="' + t[0] + '">' + t[1] + (n ? '<b>' + n + '</b>' : '') + '</button>';
+    }).join('');
+    document.querySelectorAll('.tab').forEach(function (b) { b.onclick = function () { cur = b.dataset.t; $('#filter').value = ''; render(); }; });
+    var sts = (data.statuses || {})[cur], f = $('#filter'), keep = f.value;
+    f.innerHTML = sts ? '<option value="">All statuses</option>' + sts.map(function (s) { return '<option>' + s + '</option>'; }).join('') : '';
+    f.hidden = !sts; f.value = (keep && sts && sts.indexOf(keep) > -1) ? keep : '';
+    var q = $('#q').value.toLowerCase(), st = f.value;
+    var rows = (data[cur] || []).filter(function (r) { return (!st || r.status === st) && (!q || JSON.stringify(r).toLowerCase().indexOf(q) > -1); });
+    $('#list').innerHTML = rows.length ? rows.map(card).join('') : '<div class="empty">Nothing here yet.</div>';
+    document.querySelectorAll('#list [data-id]').forEach(function (el) {
+      var id = +el.dataset.id;
+      if (el.tagName === 'SELECT') {
+        el.onchange = function () { api('/api/admin/data', { method: 'POST', body: JSON.stringify({ table: cur, id: id, status: el.value }) }).then(load); };
+      } else {
+        el.onclick = function () { if (confirm('Delete this entry permanently?')) api('/api/admin/data', { method: 'DELETE', body: JSON.stringify({ table: cur, id: id }) }).then(load); };
+      }
+    });
+  }
+  $('#csv').onclick = function () {
+    var rows = data[cur] || []; if (!rows.length) return;
+    var cols = Object.keys(rows[0]);
+    var out = [cols.join(',')].concat(rows.map(function (r) {
+      return cols.map(function (c) { return '"' + String(r[c] == null ? '' : r[c]).replace(/"/g, '""') + '"'; }).join(',');
+    })).join('\n');
+    var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([out], { type: 'text/csv' })); a.download = cur + '.csv'; a.click();
+  };
+  load();
+  setInterval(function () { if (!document.hidden && !$('#app').hidden) load(); }, 60000);
+})();
+</script>
+</body>
+</html>
