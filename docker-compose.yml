@@ -4,6 +4,9 @@ services:
     image: skincarebimee-web:latest
     container_name: skincarebimee-web
     restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
     ports:
       - "${HOST_PORT:-8080}:80"
     read_only: true
@@ -13,3 +16,24 @@ services:
       - /tmp
     security_opt:
       - no-new-privileges:true
+
+  api:
+    build: ./api
+    image: skincarebimee-api:latest
+    container_name: skincarebimee-api
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DB_PATH: /data/bimee.db
+    volumes:
+      - bimee-data:/data        # SQLite database lives here (persistent across rebuilds)
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    expose:
+      - "3000"
+
+volumes:
+  bimee-data:

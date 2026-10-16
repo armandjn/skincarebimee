@@ -1,0 +1,9 @@
+{
+  "name": "skincarebimee-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Forms + admin API (zero dependencies, SQLite via node:sqlite)",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=24" }
+}
