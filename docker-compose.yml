@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    image: skincarebimee-web:latest
+    container_name: skincarebimee-web
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT:-8080}:80"
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
