@@ -18,6 +18,11 @@
 	],
 	// Sandboxed plugins require Worker Loader, available on Workers paid plans. Uncomment to enable:
 	// "worker_loaders": [{ "binding": "LOADER" }],
+	// Production domains (DNS records are created by Cloudflare on deploy)
+	"routes": [
+		{ "pattern": "skincarebimee.com", "custom_domain": true },
+		{ "pattern": "www.skincarebimee.com", "custom_domain": true },
+	],
 	// General maintenance cron trigger
 	"triggers": {
 		"crons": ["* * * * *"],

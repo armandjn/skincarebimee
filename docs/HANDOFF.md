@@ -89,10 +89,11 @@ Added by Claude and **still needing the owner's review:** the 3 blog posts, the 
 
 ## 9. EmDash migration status (branch `emdash`)
 
-- Live preview: https://skincarebimee.armandjn.workers.dev (Worker `skincarebimee`, free plan). Production domain still on the old Pages site.
-- Owner still has to open `/_emdash/admin` and create the admin account (passkey). `/submissions` (form entries) works only after login.
+- PRODUCTION: https://skincarebimee.com and https://www.skincarebimee.com now serve the EmDash Worker `skincarebimee` (free plan; also https://skincarebimee.armandjn.workers.dev). The old Pages project `skincarebimee` (+ pages.dev, root `*.html`, `functions/`) is detached from the domains and kept only as a fallback; its D1 `skincarebimee-db` still holds old form submissions.
+- Owner creates the admin account (passkey) at https://skincarebimee.com/_emdash/admin — passkeys are bound to the hostname, so use the production domain, not workers.dev. `/submissions` (form entries) works only after login.
 - Deploy: `cd site-emdash`, load `../.env`, `npm run deploy`. After schema/dependency changes also run `npx emdash migrate` (see above). Free-plan Worker size limit 3 MB gzipped (currently ~2.8 MB; admin locales trimmed in `astro.config.mjs`).
 - Design: the EmDash marketing template was replaced by the ORIGINAL site design. `site-emdash/public/assets/{css,js,img}` are copies of the root `assets/`; markup is ported 1:1 from `tools/build.js` into `site-emdash/src/lib/classic.ts` (HTML strings) and rendered by `src/layouts/Classic.astro` + one small Astro page per route. Services and posts come from the CMS; home/about/virtual/shop/contact/gift/book copy lives in `classic.ts`. The template's `Base.astro`, block components and `[slug].astro` are unused leftovers.
 - Seed changes: edit via admin, or regenerate `seed/seed.json` only for a fresh database (seed applies once).
 - Not done: email notifications, gift-card payments, custom domain switch, redirects check on workers.dev, mobile check on a real phone.
 - 2026-11-01 — Replaced the template look with the original site design (see §9 Design); services/posts stay in the CMS. Recreated remote D1 again (id `a29c2142-da76-4fa4-bf53-0a77a3ad8e8b`), forms.sql + migrations + seed re-applied, redeployed. All pages 200 on workers.dev.
+- 2026-11-01 — Merged `emdash` into `main` (fast-forward, pushed). Moved `skincarebimee.com` + `www` from the Pages project to the Worker: deleted the two Pages custom domains and their proxied CNAMEs, added `routes` with `custom_domain: true` in `site-emdash/wrangler.jsonc`, deployed. Both domains return 200 from the Worker; admin not created yet (`needsSetup: true`).
