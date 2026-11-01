@@ -8,10 +8,14 @@
 		{
 			"binding": "DB",
 			"database_name": "skincarebimee-emdash",
+			"database_id": "3311a203-155c-4a86-b1d9-03b5c4fdd08b",
 		},
 	],
-	// Media lives in KV (free plan). Add "id" after creating the namespace.
-	"kv_namespaces": [{ "binding": "MEDIA_KV" }],
+	// Media lives in KV (free plan). Ids come from the Cloudflare account.
+	"kv_namespaces": [
+		{ "binding": "MEDIA_KV", "id": "da029277c5974e319a6828079ffe058c" },
+		{ "binding": "SESSION", "id": "71b1176bded04c0b94641bfb38428717" },
+	],
 	// Sandboxed plugins require Worker Loader, available on Workers paid plans. Uncomment to enable:
 	// "worker_loaders": [{ "binding": "LOADER" }],
 	// General maintenance cron trigger
