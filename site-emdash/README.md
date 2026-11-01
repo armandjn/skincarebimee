@@ -63,3 +63,7 @@ The first deployment provisions the named D1 database and R2 bucket from `wrangl
 - [Node.js variant](../marketing) -- same template using SQLite and local file storage
 - [All templates](../)
 - [EmDash documentation](https://docs.emdashcms.com/)
+
+## Deploy
+
+Pushing to `main` deploys this site to Cloudflare Workers via `.github/workflows/deploy.yml`. Content edited in the admin needs no deploy.
