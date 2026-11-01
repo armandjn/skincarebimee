@@ -526,11 +526,6 @@ POSTS.forEach((p) => {
 // 404
 page({ file: '404.html', title: 'Page not found', desc: 'The page you are looking for could not be found.', body: `${pageHero({ eyebrow: '404', title: 'This page <em class="gold-text">drifted away</em>', lead: 'The page you are looking for does not exist or has moved.', extra: `<div class="btn-row" style="margin-top:2rem"><a class="btn btn--gold" href="index.html">Back home ${ic('arrow')}</a><a class="btn btn--ghost" href="services.html">Browse services</a></div>` })}<section class="section"></section>` });
 
-/* ---------------- favicon + vercel config ---------------- */
+/* ---------------- favicon ---------------- */
 fs.writeFileSync(path.join(OUT, 'assets/img/favicon.svg'), `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#08171a"/><g transform="translate(5 5) scale(.75)"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3dc9c"/><stop offset=".5" stop-color="#c9a24c"/><stop offset="1" stop-color="#96722a"/></linearGradient></defs><path d="M33 5C17 5 6 14 6 27c0 2.4.5 4.6 1.5 6.5C10 27 15 21 22 17c-6 5-10.500 11.500-11.500 18.500C26 37 36 22 33 5z" fill="url(#g)"/></g></svg>`);
-const redirects = [
-  ['/home', '/'], ['/skin-care', '/services'], ['/services/:slug', '/service-:slug'], ['/eye-brow', '/service-lip-and-eye-treatment'],
-  ['/service-microdermabraison', '/service-microdermabraison'], ['/category/:slug', '/shop'], ['/blog/:slug', '/blog'], ['/service-page/:slug', '/service-:slug']
-].filter(([a, b]) => a !== b).map(([source, destination]) => ({ source, destination, permanent: true }));
-fs.writeFileSync(path.join(OUT, 'vercel.json'), JSON.stringify({ cleanUrls: true, redirects }, null, 2));
 console.log('done');

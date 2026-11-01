@@ -81,3 +81,4 @@ Added by Claude and **still needing the owner's review:** the 3 blog posts, the 
 - 2026-11-01 — Removed Docker/self-hosted sources from the repo (`37872dc`); VPS dropped from scope by the owner.
 - 2026-11-01 — Fixed mobile menu: header raised above full-screen menu while open (`7d6b49b`).
 - 2026-11-01 — Rewrote this handoff for the next agent; README links to it (`2ce902f`).
+- 2026-11-01 — Removed unused `vercel.json` (and its generation in `tools/build.js`) and obsolete Docker-only `.env.example`; Cloudflare uses `_redirects` instead. Kept `raw/` (Wix source, git-ignored) and `tools/shot.sh`.
