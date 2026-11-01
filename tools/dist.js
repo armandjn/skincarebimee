@@ -1,4 +1,4 @@
-// Cloudflare Pages build: copy only the public site into ./dist (keeps Docker/API sources out of the deploy)
+// Cloudflare Pages build: copy only the public site into ./dist
 const fs = require('fs');
 const path = require('path');
 const root = path.join(__dirname, '..');
