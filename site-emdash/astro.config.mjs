@@ -91,16 +91,16 @@ export default defineConfig({
 	fonts: [
 		{
 			provider: fontProviders.google(),
-			name: "Inter",
+			name: "Jost",
 			cssVariable: "--font-body",
 			weights: [400, 500, 600, 700],
 			fallbacks: ["sans-serif"],
 		},
 		{
 			provider: fontProviders.google(),
-			name: "Instrument Serif",
+			name: "Cormorant Garamond",
 			cssVariable: "--font-display",
-			weights: [400],
+			weights: [400, 500, 600],
 			styles: ["normal", "italic"],
 			fallbacks: ["serif"],
 		},

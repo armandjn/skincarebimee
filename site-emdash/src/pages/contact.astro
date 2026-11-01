@@ -1,0 +1,33 @@
+---
+import AjaxForm from "../components/AjaxForm.astro";
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Contact" description="Contact Skincare Bimee — Cross Roads Salon Suites, 3033 W. Parker Rd., Suite 113, Plano, TX. Call (214) 944-0191 or email skincarebimee@gmail.com.">
+	<header class="container bimee-hero">
+		<p class="eyebrow">Contact</p>
+		<h1>Let’s talk skin</h1>
+		<p class="lead">Have questions or need personalised skincare advice? Reach out — we are here to help you achieve your skincare goals.</p>
+	</header>
+	<section class="container bimee-two" style="padding-bottom:2rem">
+		<ul class="bimee-info">
+			<li><small>Studio</small>Cross Roads Salon Suites<br />3033 W. Parker Rd., Suite 113<br />Plano, TX 75023 · Room 111</li>
+			<li><small>Allen address</small>945 Stockton Dr Ste 4110<br />Allen, TX 75013</li>
+			<li><small>Call</small><a href="tel:+12149440191">(214) 944-0191</a></li>
+			<li><small>Email</small><a href="mailto:skincarebimee@gmail.com">skincarebimee@gmail.com</a></li>
+			<li><small>Follow</small><a href="https://www.instagram.com/skincarebimee" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.youtube.com/@skincarebimee" target="_blank" rel="noopener">YouTube</a></li>
+		</ul>
+		<AjaxForm api="/api/contact" subject="Website enquiry" success="Thanks for reaching out! We will get back to you soon.">
+			<h2 style="font-family:var(--font-display);font-weight:500;margin:0">Send a message</h2>
+			<div class="row">
+				<label>First name <input name="first_name" autocomplete="given-name" /></label>
+				<label>Last name <input name="last_name" autocomplete="family-name" /></label>
+			</div>
+			<label>Email <input name="email" type="email" required autocomplete="email" /></label>
+			<label>Message <textarea name="message" required></textarea></label>
+		</AjaxForm>
+	</section>
+	<div class="container bimee-map" style="padding-bottom:4rem">
+		<iframe title="Map to Skincare Bimee, Plano TX" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=3033+W+Parker+Rd+Suite+113+Plano+TX+75023&output=embed"></iframe>
+	</div>
+</Base>

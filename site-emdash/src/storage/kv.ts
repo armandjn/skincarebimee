@@ -67,11 +67,11 @@ export class KVStorage implements Storage {
 			let length = size;
 			const range = options.range;
 			if (range) {
-				if (range.suffix !== undefined) {
+				if ("suffix" in range) {
 					length = Math.min(range.suffix, size);
 					offset = size - length;
 				} else {
-					offset = Math.min(range.offset ?? 0, size);
+					offset = Math.min(range.offset, size);
 					length = Math.min(range.length ?? size, size - offset);
 				}
 			}
@@ -146,7 +146,7 @@ export class KVStorage implements Storage {
 export function createStorage(config: Record<string, unknown>): Storage {
 	const binding = typeof config.binding === "string" ? config.binding : "";
 	const publicUrl = typeof config.publicUrl === "string" ? config.publicUrl : undefined;
-	const kv = binding ? ((env as Record<string, unknown>)[binding] as KVNamespace | undefined) : undefined;
+	const kv = binding ? ((env as unknown as Record<string, unknown>)[binding] as KVNamespace | undefined) : undefined;
 	if (!kv) {
 		throw new EmDashStorageError(
 			`KV binding "${binding}" not found. Add it under kv_namespaces in wrangler.jsonc.`,

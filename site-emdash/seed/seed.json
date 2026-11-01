@@ -2,14 +2,16 @@
 	"$schema": "https://emdashcms.com/seed.schema.json",
 	"version": "1",
 	"meta": {
-		"name": "Marketing Starter",
-		"description": "A photo-led marketing site for a product or service, built from modular blocks",
-		"author": "EmDash"
+		"name": "Skincare Bimee",
+		"description": "Esthetician studio in Plano, Texas",
+		"author": "Skincare Bimee"
 	},
 	"settings": {
-		"title": "Halden",
-		"tagline": "Energy intelligence for commercial buildings",
-		"seo": { "titleSeparator": "—" }
+		"title": "Skincare Bimee",
+		"tagline": "Facials and advanced skin treatments in Plano, Texas",
+		"seo": {
+			"titleSeparator": "|"
+		}
 	},
 	"blockTypes": [
 		{
@@ -22,23 +24,48 @@
 				{
 					"version": 1,
 					"fields": [
-						{ "slug": "headline", "label": "Headline", "type": "string", "required": true },
-						{ "slug": "subheadline", "label": "Subheadline", "type": "text" },
-						{ "slug": "primary_cta_label", "label": "Primary button text", "type": "string" },
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string",
+							"required": true
+						},
+						{
+							"slug": "subheadline",
+							"label": "Subheadline",
+							"type": "text"
+						},
+						{
+							"slug": "primary_cta_label",
+							"label": "Primary button text",
+							"type": "string"
+						},
 						{
 							"slug": "primary_cta_url",
 							"label": "Primary button link (starts with /, https://, mailto:, tel: or #)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|(?:https?://|mailto:|tel:|/(?!/)|#).+)$" }
+							"validation": {
+								"pattern": "^(?:$|(?:https?://|mailto:|tel:|/(?!/)|#).+)$"
+							}
 						},
-						{ "slug": "secondary_cta_label", "label": "Secondary button text", "type": "string" },
+						{
+							"slug": "secondary_cta_label",
+							"label": "Secondary button text",
+							"type": "string"
+						},
 						{
 							"slug": "secondary_cta_url",
 							"label": "Secondary button link (starts with /, https://, mailto:, tel: or #)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|(?:https?://|mailto:|tel:|/(?!/)|#).+)$" }
+							"validation": {
+								"pattern": "^(?:$|(?:https?://|mailto:|tel:|/(?!/)|#).+)$"
+							}
 						},
-						{ "slug": "image", "label": "Image", "type": "image" },
+						{
+							"slug": "image",
+							"label": "Image",
+							"type": "image"
+						},
 						{
 							"slug": "image_caption",
 							"label": "Image caption (shown on the photo)",
@@ -53,7 +80,9 @@
 							"slug": "eyebrow_url",
 							"label": "Announcement link (starts with /, https://, mailto:, tel: or #)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|/(?!/|\\\\).*|(?:https?://|mailto:|tel:|#).+)$" }
+							"validation": {
+								"pattern": "^(?:$|/(?!/|\\\\).*|(?:https?://|mailto:|tel:|#).+)$"
+							}
 						},
 						{
 							"slug": "centered",
@@ -65,7 +94,9 @@
 							"slug": "anchor_id",
 							"label": "Section ID (lowercase, for links like /#pricing)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|[a-z][a-z0-9_-]*)$" }
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
 						}
 					]
 				}
@@ -81,13 +112,22 @@
 				{
 					"version": 1,
 					"fields": [
-						{ "slug": "headline", "label": "Headline", "type": "string", "required": true },
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string",
+							"required": true
+						},
 						{
 							"slug": "subheadline",
 							"label": "Second sentence (shown muted after the headline)",
 							"type": "text"
 						},
-						{ "slug": "eyebrow", "label": "Label above headline", "type": "string" },
+						{
+							"slug": "eyebrow",
+							"label": "Label above headline",
+							"type": "string"
+						},
 						{
 							"slug": "features",
 							"label": "Features",
@@ -126,7 +166,12 @@
 											"trend"
 										]
 									},
-									{ "slug": "title", "label": "Title", "type": "string", "required": true },
+									{
+										"slug": "title",
+										"label": "Title",
+										"type": "string",
+										"required": true
+									},
 									{
 										"slug": "description",
 										"label": "Description (leave a blank line between paragraphs)",
@@ -140,7 +185,9 @@
 							"slug": "anchor_id",
 							"label": "Section ID (lowercase, for links like /#pricing)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|[a-z][a-z0-9_-]*)$" }
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
 						}
 					]
 				}
@@ -176,9 +223,22 @@
 										"type": "text",
 										"required": true
 									},
-									{ "slug": "author", "label": "Author name", "type": "string", "required": true },
-									{ "slug": "role", "label": "Role or title", "type": "string" },
-									{ "slug": "company", "label": "Company", "type": "string" },
+									{
+										"slug": "author",
+										"label": "Author name",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "role",
+										"label": "Role or title",
+										"type": "string"
+									},
+									{
+										"slug": "company",
+										"label": "Company",
+										"type": "string"
+									},
 									{
 										"slug": "avatar",
 										"label": "Avatar (initials show when empty)",
@@ -191,7 +251,9 @@
 							"slug": "anchor_id",
 							"label": "Section ID (lowercase, for links like /#pricing)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|[a-z][a-z0-9_-]*)$" }
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
 						}
 					]
 				}
@@ -207,7 +269,11 @@
 				{
 					"version": 1,
 					"fields": [
-						{ "slug": "headline", "label": "Headline", "type": "string" },
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string"
+						},
 						{
 							"slug": "plans",
 							"label": "Plans",
@@ -217,15 +283,33 @@
 								"minItems": 1,
 								"maxItems": 3,
 								"subFields": [
-									{ "slug": "name", "label": "Plan name", "type": "string", "required": true },
-									{ "slug": "price", "label": "Price", "type": "string", "required": true },
-									{ "slug": "period", "label": "Period", "type": "string" },
+									{
+										"slug": "name",
+										"label": "Plan name",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "price",
+										"label": "Price",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "period",
+										"label": "Period",
+										"type": "string"
+									},
 									{
 										"slug": "description",
 										"label": "Description (leave a blank line between paragraphs)",
 										"type": "text"
 									},
-									{ "slug": "features", "label": "Features (one per line)", "type": "text" },
+									{
+										"slug": "features",
+										"label": "Features (one per line)",
+										"type": "text"
+									},
 									{
 										"slug": "cta_label",
 										"label": "Button text",
@@ -238,7 +322,11 @@
 										"type": "string",
 										"required": true
 									},
-									{ "slug": "highlighted", "label": "Highlight this plan", "type": "boolean" },
+									{
+										"slug": "highlighted",
+										"label": "Highlight this plan",
+										"type": "boolean"
+									},
 									{
 										"slug": "badge",
 										"label": "Badge text, for example Most popular",
@@ -251,7 +339,9 @@
 							"slug": "anchor_id",
 							"label": "Section ID (lowercase, for links like /#pricing)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|[a-z][a-z0-9_-]*)$" }
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
 						}
 					]
 				}
@@ -267,8 +357,16 @@
 				{
 					"version": 1,
 					"fields": [
-						{ "slug": "headline", "label": "Headline", "type": "string" },
-						{ "slug": "subheadline", "label": "Subheadline", "type": "text" },
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string"
+						},
+						{
+							"slug": "subheadline",
+							"label": "Subheadline",
+							"type": "text"
+						},
 						{
 							"slug": "items",
 							"label": "Questions",
@@ -278,7 +376,12 @@
 								"minItems": 1,
 								"maxItems": 12,
 								"subFields": [
-									{ "slug": "question", "label": "Question", "type": "string", "required": true },
+									{
+										"slug": "question",
+										"label": "Question",
+										"type": "string",
+										"required": true
+									},
 									{
 										"slug": "answer",
 										"label": "Answer (leave a blank line between paragraphs)",
@@ -292,7 +395,9 @@
 							"slug": "anchor_id",
 							"label": "Section ID (lowercase, for links like /#pricing)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|[a-z][a-z0-9_-]*)$" }
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
 						}
 					]
 				}
@@ -322,8 +427,17 @@
 								"minItems": 1,
 								"maxItems": 24,
 								"subFields": [
-									{ "slug": "name", "label": "Company name", "type": "string", "required": true },
-									{ "slug": "logo", "label": "Logo", "type": "image" }
+									{
+										"slug": "name",
+										"label": "Company name",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "logo",
+										"label": "Logo",
+										"type": "image"
+									}
 								]
 							}
 						},
@@ -331,7 +445,9 @@
 							"slug": "anchor_id",
 							"label": "Section ID (lowercase, for links like /#pricing)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|[a-z][a-z0-9_-]*)$" }
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
 						}
 					]
 				}
@@ -347,22 +463,45 @@
 				{
 					"version": 1,
 					"fields": [
-						{ "slug": "headline", "label": "Headline", "type": "string", "required": true },
-						{ "slug": "eyebrow", "label": "Label above headline", "type": "string" },
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string",
+							"required": true
+						},
+						{
+							"slug": "eyebrow",
+							"label": "Label above headline",
+							"type": "string"
+						},
 						{
 							"slug": "body",
 							"label": "Body (leave a blank line between paragraphs)",
 							"type": "text"
 						},
-						{ "slug": "points", "label": "Checklist (one item per line)", "type": "text" },
-						{ "slug": "cta_label", "label": "Link text", "type": "string" },
+						{
+							"slug": "points",
+							"label": "Checklist (one item per line)",
+							"type": "text"
+						},
+						{
+							"slug": "cta_label",
+							"label": "Link text",
+							"type": "string"
+						},
 						{
 							"slug": "cta_url",
 							"label": "Link (starts with /, https://, mailto:, tel: or #)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|/(?!/|\\\\).*|(?:https?://|mailto:|tel:|#).+)$" }
+							"validation": {
+								"pattern": "^(?:$|/(?!/|\\\\).*|(?:https?://|mailto:|tel:|#).+)$"
+							}
 						},
-						{ "slug": "image", "label": "Image", "type": "image" },
+						{
+							"slug": "image",
+							"label": "Image",
+							"type": "image"
+						},
 						{
 							"slug": "image_caption",
 							"label": "Image caption (shown on the photo)",
@@ -378,7 +517,9 @@
 							"slug": "anchor_id",
 							"label": "Section ID (lowercase, for links like /#pricing)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|[a-z][a-z0-9_-]*)$" }
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
 						}
 					]
 				}
@@ -394,7 +535,11 @@
 				{
 					"version": 1,
 					"fields": [
-						{ "slug": "headline", "label": "Headline", "type": "string" },
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string"
+						},
 						{
 							"slug": "subheadline",
 							"label": "Second sentence (shown muted after the headline)",
@@ -409,8 +554,18 @@
 								"minItems": 1,
 								"maxItems": 6,
 								"subFields": [
-									{ "slug": "value", "label": "Value", "type": "string", "required": true },
-									{ "slug": "label", "label": "Label", "type": "string", "required": true }
+									{
+										"slug": "value",
+										"label": "Value",
+										"type": "string",
+										"required": true
+									},
+									{
+										"slug": "label",
+										"label": "Label",
+										"type": "string",
+										"required": true
+									}
 								]
 							}
 						},
@@ -418,7 +573,9 @@
 							"slug": "anchor_id",
 							"label": "Section ID (lowercase, for links like /#pricing)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|[a-z][a-z0-9_-]*)$" }
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
 						}
 					]
 				}
@@ -434,32 +591,55 @@
 				{
 					"version": 1,
 					"fields": [
-						{ "slug": "headline", "label": "Headline", "type": "string", "required": true },
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string",
+							"required": true
+						},
 						{
 							"slug": "body",
 							"label": "Body (leave a blank line between paragraphs)",
 							"type": "text"
 						},
-						{ "slug": "primary_cta_label", "label": "Primary button text", "type": "string" },
+						{
+							"slug": "primary_cta_label",
+							"label": "Primary button text",
+							"type": "string"
+						},
 						{
 							"slug": "primary_cta_url",
 							"label": "Primary button link (starts with /, https://, mailto:, tel: or #)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|/(?!/|\\\\).*|(?:https?://|mailto:|tel:|#).+)$" }
+							"validation": {
+								"pattern": "^(?:$|/(?!/|\\\\).*|(?:https?://|mailto:|tel:|#).+)$"
+							}
 						},
-						{ "slug": "secondary_cta_label", "label": "Secondary button text", "type": "string" },
+						{
+							"slug": "secondary_cta_label",
+							"label": "Secondary button text",
+							"type": "string"
+						},
 						{
 							"slug": "secondary_cta_url",
 							"label": "Secondary button link (starts with /, https://, mailto:, tel: or #)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|/(?!/|\\\\).*|(?:https?://|mailto:|tel:|#).+)$" }
+							"validation": {
+								"pattern": "^(?:$|/(?!/|\\\\).*|(?:https?://|mailto:|tel:|#).+)$"
+							}
 						},
-						{ "slug": "image", "label": "Background image", "type": "image" },
+						{
+							"slug": "image",
+							"label": "Background image",
+							"type": "image"
+						},
 						{
 							"slug": "anchor_id",
 							"label": "Section ID (lowercase, for links like /#pricing)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|[a-z][a-z0-9_-]*)$" }
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
 						}
 					]
 				}
@@ -475,9 +655,21 @@
 				{
 					"version": 1,
 					"fields": [
-						{ "slug": "headline", "label": "Headline", "type": "string" },
-						{ "slug": "eyebrow", "label": "Label above headline", "type": "string" },
-						{ "slug": "subheadline", "label": "Subheadline", "type": "text" },
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string"
+						},
+						{
+							"slug": "eyebrow",
+							"label": "Label above headline",
+							"type": "string"
+						},
+						{
+							"slug": "subheadline",
+							"label": "Subheadline",
+							"type": "text"
+						},
 						{
 							"slug": "options",
 							"label": "Contact options",
@@ -492,9 +684,21 @@
 										"label": "Icon",
 										"type": "select",
 										"required": true,
-										"options": ["email", "support", "sales", "phone", "chat", "location"]
+										"options": [
+											"email",
+											"support",
+											"sales",
+											"phone",
+											"chat",
+											"location"
+										]
 									},
-									{ "slug": "title", "label": "Title", "type": "string", "required": true },
+									{
+										"slug": "title",
+										"label": "Title",
+										"type": "string",
+										"required": true
+									},
 									{
 										"slug": "description",
 										"label": "Description (leave a blank line between paragraphs)",
@@ -519,7 +723,9 @@
 							"slug": "anchor_id",
 							"label": "Section ID (lowercase, for links like /#pricing)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|[a-z][a-z0-9_-]*)$" }
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
 						}
 					]
 				}
@@ -535,13 +741,24 @@
 				{
 					"version": 1,
 					"fields": [
-						{ "slug": "headline", "label": "Headline", "type": "string" },
-						{ "slug": "body", "label": "Body", "type": "portableText", "required": true },
+						{
+							"slug": "headline",
+							"label": "Headline",
+							"type": "string"
+						},
+						{
+							"slug": "body",
+							"label": "Body",
+							"type": "portableText",
+							"required": true
+						},
 						{
 							"slug": "anchor_id",
 							"label": "Section ID (lowercase, for links like /#pricing)",
 							"type": "string",
-							"validation": { "pattern": "^(?:$|[a-z][a-z0-9_-]*)$" }
+							"validation": {
+								"pattern": "^(?:$|[a-z][a-z0-9_-]*)$"
+							}
 						}
 					]
 				}
@@ -554,7 +771,12 @@
 			"label": "Pages",
 			"labelSingular": "Page",
 			"urlPattern": "/{slug}",
-			"supports": ["drafts", "revisions", "preview", "seo"],
+			"supports": [
+				"drafts",
+				"revisions",
+				"preview",
+				"seo"
+			],
 			"fields": [
 				{
 					"slug": "title",
@@ -584,6 +806,153 @@
 					}
 				}
 			]
+		},
+		{
+			"slug": "services",
+			"label": "Services",
+			"labelSingular": "Service",
+			"urlPattern": "/service-{slug}",
+			"supports": [
+				"drafts",
+				"revisions",
+				"preview",
+				"seo",
+				"search"
+			],
+			"fields": [
+				{
+					"slug": "title",
+					"label": "Name",
+					"type": "string",
+					"required": true,
+					"searchable": true
+				},
+				{
+					"slug": "short",
+					"label": "Short description (cards)",
+					"type": "text",
+					"searchable": true
+				},
+				{
+					"slug": "lead",
+					"label": "Lead paragraph",
+					"type": "text"
+				},
+				{
+					"slug": "content",
+					"label": "What to expect",
+					"type": "portableText",
+					"searchable": true
+				},
+				{
+					"slug": "duration",
+					"label": "Duration (e.g. 1 hr)",
+					"type": "string"
+				},
+				{
+					"slug": "price",
+					"label": "Price in USD (0 = free, empty = coming soon)",
+					"type": "number"
+				},
+				{
+					"slug": "category",
+					"label": "Category",
+					"type": "select",
+					"validation": {
+						"options": [
+							"face",
+							"advanced",
+							"body",
+							"virtual",
+							"soon"
+						]
+					}
+				},
+				{
+					"slug": "soon",
+					"label": "Coming soon",
+					"type": "boolean"
+				},
+				{
+					"slug": "sort",
+					"label": "Sort order",
+					"type": "integer"
+				},
+				{
+					"slug": "image",
+					"label": "Photo",
+					"type": "image"
+				},
+				{
+					"slug": "ideal",
+					"label": "Ideal for (one per line)",
+					"type": "text"
+				},
+				{
+					"slug": "highlights",
+					"label": "Highlights (title | description, one per line)",
+					"type": "text"
+				},
+				{
+					"slug": "pair",
+					"label": "Pairs well with (service slugs, one per line)",
+					"type": "text"
+				}
+			]
+		},
+		{
+			"slug": "posts",
+			"label": "Journal",
+			"labelSingular": "Article",
+			"urlPattern": "/post-{slug}",
+			"supports": [
+				"drafts",
+				"revisions",
+				"preview",
+				"seo",
+				"search"
+			],
+			"fields": [
+				{
+					"slug": "title",
+					"label": "Title",
+					"type": "string",
+					"required": true,
+					"searchable": true
+				},
+				{
+					"slug": "tag",
+					"label": "Topic",
+					"type": "string"
+				},
+				{
+					"slug": "read_time",
+					"label": "Reading time",
+					"type": "string"
+				},
+				{
+					"slug": "posted",
+					"label": "Date label (e.g. October 2026)",
+					"type": "string"
+				},
+				{
+					"slug": "excerpt",
+					"label": "Excerpt",
+					"type": "text",
+					"searchable": true
+				},
+				{
+					"slug": "image",
+					"label": "Photo",
+					"type": "image"
+				},
+				{
+					"slug": "content",
+					"label": "Article",
+					"type": "portableText",
+					"searchable": true
+				}
+			]
 		}
 	],
 	"menus": [
@@ -593,23 +962,28 @@
 			"items": [
 				{
 					"type": "custom",
-					"label": "Platform",
-					"url": "/#platform"
+					"label": "Services",
+					"url": "/services"
 				},
 				{
 					"type": "custom",
-					"label": "Monitoring",
-					"url": "/#monitoring"
+					"label": "Virtual",
+					"url": "/virtual-services"
 				},
 				{
 					"type": "custom",
-					"label": "Customers",
-					"url": "/#customers"
+					"label": "Shop",
+					"url": "/shop"
 				},
 				{
 					"type": "custom",
-					"label": "Pricing",
-					"url": "/pricing"
+					"label": "Journal",
+					"url": "/blog"
+				},
+				{
+					"type": "custom",
+					"label": "About",
+					"url": "/about"
 				},
 				{
 					"type": "custom",
@@ -618,38 +992,115 @@
 				},
 				{
 					"type": "custom",
-					"label": "Book a demo",
-					"url": "/contact",
+					"label": "Book now",
+					"url": "/book-online",
 					"cssClasses": "button"
 				}
 			]
 		},
 		{
 			"name": "footer_product",
-			"label": "Product",
+			"label": "Treatments",
 			"items": [
-				{ "type": "custom", "label": "Platform", "url": "/#platform" },
-				{ "type": "custom", "label": "Monitoring", "url": "/#monitoring" },
-				{ "type": "custom", "label": "Planning", "url": "/#planning" },
-				{ "type": "custom", "label": "Pricing", "url": "/pricing" }
+				{
+					"type": "custom",
+					"label": "Facial",
+					"url": "/service-facial"
+				},
+				{
+					"type": "custom",
+					"label": "Pro Pen Luminfusion",
+					"url": "/service-pro-pen-luminfusion"
+				},
+				{
+					"type": "custom",
+					"label": "Chemical Peels",
+					"url": "/service-chemical-peels"
+				},
+				{
+					"type": "custom",
+					"label": "Microdermabrasion",
+					"url": "/service-microdermabraison"
+				},
+				{
+					"type": "custom",
+					"label": "LED Light Therapy",
+					"url": "/service-led-light-therapy"
+				},
+				{
+					"type": "custom",
+					"label": "Lip & Eye Treatment",
+					"url": "/service-lip-and-eye-treatment"
+				},
+				{
+					"type": "custom",
+					"label": "Back Treatment",
+					"url": "/service-back-treatment"
+				},
+				{
+					"type": "custom",
+					"label": "Skin Consultation",
+					"url": "/service-skin-consultation"
+				}
 			]
 		},
 		{
 			"name": "footer_company",
-			"label": "Company",
+			"label": "Studio",
 			"items": [
-				{ "type": "custom", "label": "Customers", "url": "/#customers" },
-				{ "type": "custom", "label": "FAQ", "url": "/#faq" },
-				{ "type": "custom", "label": "Contact", "url": "/contact" }
+				{
+					"type": "custom",
+					"label": "About",
+					"url": "/about"
+				},
+				{
+					"type": "custom",
+					"label": "Journal",
+					"url": "/blog"
+				},
+				{
+					"type": "custom",
+					"label": "Contact",
+					"url": "/contact"
+				},
+				{
+					"type": "custom",
+					"label": "Instagram",
+					"url": "https://www.instagram.com/skincarebimee",
+					"target": "_blank"
+				},
+				{
+					"type": "custom",
+					"label": "YouTube",
+					"url": "https://www.youtube.com/@skincarebimee",
+					"target": "_blank"
+				}
 			]
 		},
 		{
 			"name": "footer_support",
 			"label": "Support",
 			"items": [
-				{ "type": "custom", "label": "Talk to sales", "url": "mailto:sales@halden.example" },
-				{ "type": "custom", "label": "Support", "url": "mailto:support@halden.example" },
-				{ "type": "custom", "label": "Email us", "url": "mailto:hello@halden.example" }
+				{
+					"type": "custom",
+					"label": "Book online",
+					"url": "/book-online"
+				},
+				{
+					"type": "custom",
+					"label": "Gift card",
+					"url": "/gift-card"
+				},
+				{
+					"type": "custom",
+					"label": "Virtual services",
+					"url": "/virtual-services"
+				},
+				{
+					"type": "custom",
+					"label": "Call (214) 944-0191",
+					"url": "tel:+12149440191"
+				}
 			]
 		}
 	],
@@ -665,340 +1116,1257 @@
 						{
 							"_type": "marketing_hero",
 							"_version": 1,
-							"_key": "hero",
-							"eyebrow": "New: automated CSRD and GRESB reporting",
-							"eyebrow_url": "/#planning",
-							"headline": "Every building, running at its best.",
-							"subheadline": "Halden connects to the meters and systems you already have, finds the waste, and fixes it automatically, across one building or ten thousand.",
-							"primary_cta_label": "Book a demo",
-							"primary_cta_url": "/contact",
-							"secondary_cta_label": "See how it works",
-							"secondary_cta_url": "/#platform",
+							"_key": "hero-95",
+							"eyebrow": "Esthetician · Plano, Texas",
+							"eyebrow_url": "/services",
+							"headline": "Be your own kind of beautiful.",
+							"subheadline": "Healthy skin is a combination of science and art. Personalised facials and advanced, medical-grade treatments, crafted around you.",
+							"primary_cta_label": "Book now",
+							"primary_cta_url": "/book-online",
+							"secondary_cta_label": "Explore treatments",
+							"secondary_cta_url": "/services",
 							"image": {
-								"$media": {
-									"url": "https://images.unsplash.com/photo-1476889833843-503f40e367a0?w=2400&h=1350&fit=crop&q=80&fm=jpg",
-									"alt": "Concrete atrium with round skylights, seen from below",
-									"filename": "halden-atrium.jpg"
-								}
+								"id": "static-hero-candles-jpg",
+								"src": "/img/hero-candles.jpg",
+								"alt": "Candlelit treatment room at Skincare Bimee"
 							},
-							"image_caption": "Riverside Tower · 18% below its 2024 energy baseline"
-						},
-						{
-							"_type": "marketing_logos",
-							"_version": 1,
-							"_key": "logos",
-							"headline": "Trusted by property, hospitality and campus teams",
-							"logos": [
-								{ "name": "Oakline" },
-								{ "name": "Arden Hotels" },
-								{ "name": "Calder" },
-								{ "name": "Westmere" },
-								{ "name": "Kestrel" },
-								{ "name": "Northfield" }
-							]
-						},
-						{
-							"_type": "marketing_features",
-							"_version": 1,
-							"_key": "platform",
-							"anchor_id": "platform",
-							"eyebrow": "Platform",
-							"headline": "One platform for every building.",
-							"subheadline": "Meters, controls and reports, finally in one place.",
-							"features": [
-								{
-									"icon": "gauge",
-									"title": "Every meter, one view",
-									"description": "Electricity, gas, water and heat from every site, normalised and live."
-								},
-								{
-									"icon": "zap",
-									"title": "Fixes that run themselves",
-									"description": "When a building drifts, Halden adjusts schedules and setpoints, then shows what it saved."
-								},
-								{
-									"icon": "file",
-									"title": "Reports in minutes",
-									"description": "CSRD, GRESB and ENERGY STAR submissions from the same data, ready for your auditor."
-								},
-								{
-									"icon": "chart",
-									"title": "Benchmarks that mean something",
-									"description": "Compare buildings by type, climate and occupancy, not just floor area."
-								},
-								{
-									"icon": "plug",
-									"title": "Works with what you have",
-									"description": "Connects to your existing BMS, meters and utility accounts. No rip and replace."
-								},
-								{
-									"icon": "trend",
-									"title": "Budgets you can trust",
-									"description": "Forecast spend and carbon a year ahead, with weather and tariffs built in."
-								}
-							]
+							"image_caption": "Cross Roads Salon Suites · Plano, TX"
 						},
 						{
 							"_type": "marketing_split",
 							"_version": 1,
-							"_key": "monitoring",
-							"anchor_id": "monitoring",
-							"eyebrow": "Monitoring",
-							"headline": "See every kilowatt, room by room.",
-							"body": "Halden reads your meters every fifteen minutes and learns how each building should behave. When a chiller runs overnight or a floor heats an empty office, you know before the bill does.",
-							"points": "Live data from 400+ meter and BMS integrations\nAlerts ranked by cost, not by noise\nEvery fix logged with the saving it made",
-							"cta_label": "Book a walkthrough",
-							"cta_url": "/contact",
+							"_key": "split-96",
+							"eyebrow": "Meet your esthetician",
+							"headline": "Great skin, from within.",
+							"body": "“From a young age, I was fascinated by the world of skincare and beauty. The transformation I experienced after seeing an esthetician was life-changing and planted the seed for my future career.”\n\nToday I combine medical insight with esthetic expertise — so every treatment is built around your skin, your goals and your safety and well-being.",
+							"points": "Licensed in esthetics, with extensive training in skin types and the latest technology\nSpecialised in advanced treatments like chemical peels and microneedling\nA bespoke plan, crafted after taking the time to understand your skin",
+							"cta_label": "My story",
+							"cta_url": "/about",
 							"image": {
-								"$media": {
-									"url": "https://images.unsplash.com/photo-1504297050568-910d24c426d3?w=1200&h=1500&fit=crop&q=80&fm=jpg",
-									"alt": "Office corridor with glass walls and concrete columns",
-									"filename": "halden-corridor.jpg"
-								}
+								"id": "static-owner-jpg",
+								"src": "/img/owner.jpg",
+								"alt": "Your esthetician at Skincare Bimee"
 							},
-							"image_caption": "Floor 3 · 21.4 °C · CO₂ 612 ppm"
-						},
-						{
-							"_type": "marketing_split",
-							"_version": 1,
-							"_key": "planning",
-							"anchor_id": "planning",
-							"eyebrow": "Planning",
-							"headline": "Plan the path to net zero.",
-							"body": "Model retrofits, solar and electrification against how your buildings really run, then track every project against the plan.",
-							"points": "Scenario plans for every building\nPayback and carbon side by side\nBoard-ready progress reports",
-							"cta_label": "See pricing",
-							"cta_url": "/pricing",
-							"image": {
-								"$media": {
-									"url": "https://images.unsplash.com/photo-1694327671725-e2a81cda3436?w=1200&h=1500&fit=crop&q=80&fm=jpg",
-									"alt": "Rows of solar panels on a roof in warm light",
-									"filename": "halden-solar.jpg"
-								}
-							},
-							"image_caption": "Rooftop solar · 312 MWh generated this year",
-							"image_first": true
+							"image_first": true,
+							"anchor_id": "story"
 						},
 						{
 							"_type": "marketing_stats",
 							"_version": 1,
-							"_key": "results",
-							"headline": "What customers see in their first year.",
-							"subheadline": "Measured across 4,800 connected buildings.",
+							"_key": "stats-97",
+							"headline": "Treatments for every skin.",
+							"subheadline": "Simple, transparent pricing.",
 							"stats": [
-								{ "value": "23%", "label": "Lower energy spend, on average" },
-								{ "value": "4,800", "label": "Buildings connected across 14 countries" },
-								{ "value": "9 mo", "label": "Average payback period" },
-								{ "value": "99.98%", "label": "Data uptime over the last 12 months" }
-							]
-						},
-						{
-							"_type": "marketing_testimonials",
-							"_version": 1,
-							"_key": "customers",
-							"anchor_id": "customers",
-							"headline": "Customers",
-							"testimonials": [
 								{
-									"quote": "We found more savings in the first month than in five years of energy audits. Halden paid for itself before the first invoice was due.",
-									"author": "Maya Okafor",
-									"role": "Director of Facilities",
-									"company": "Calder University"
+									"value": "8",
+									"label": "Treatments, from facials to advanced resurfacing"
 								},
 								{
-									"quote": "Our GRESB submission used to take a quarter. Now it is a week of review, and the numbers hold up.",
-									"author": "Daniel Reyes",
-									"role": "Head of Sustainability",
-									"company": "Oakline"
+									"value": "$40",
+									"label": "Prices start from"
 								},
 								{
-									"quote": "Guests never notice, which is the point. Our hotels use 19% less energy and nobody had to change how they work.",
-									"author": "Priya Nair",
-									"role": "VP Operations",
-									"company": "Arden Hotels"
+									"value": "15 min–1 hr",
+									"label": "From a quick add-on to a full ritual"
+								},
+								{
+									"value": "Free",
+									"label": "Virtual skin consultation"
 								}
 							]
 						},
 						{
-							"_type": "marketing_faq",
+							"_type": "marketing_split",
 							"_version": 1,
-							"_key": "faq",
-							"anchor_id": "faq",
-							"headline": "Questions, answered.",
-							"subheadline": "Something else on your mind? Our building engineers reply within one working day.",
-							"items": [
+							"_key": "split-98",
+							"eyebrow": "Spotlight",
+							"headline": "Pro Pen Luminfusion",
+							"body": "A “supercharged” facial using the Dermalogica Pro Pen and its stainless steel cone nanotips to deliver active ingredients deep into the skin — followed by red light therapy to enhance results.",
+							"points": "Improves skin luminosity\nSmooths fine lines and wrinkles\nTargets the eye area\nCreates an instant glow, with no downtime",
+							"cta_label": "Learn more · $130",
+							"cta_url": "/service-pro-pen-luminfusion",
+							"image": {
+								"id": "static-pro-pen-jpg",
+								"src": "/img/pro-pen.jpg",
+								"alt": "Pro Pen Luminfusion treatment"
+							},
+							"image_first": false
+						},
+						{
+							"_type": "marketing_features",
+							"_version": 1,
+							"_key": "features-99",
+							"eyebrow": "Your journey",
+							"headline": "Four steps to glowing skin.",
+							"subheadline": "We take the time to understand your skin and your goals — then craft a plan just for you.",
+							"features": [
 								{
-									"question": "Do we need new hardware?",
-									"answer": "Usually not. Halden connects to the meters, building management systems and utility accounts you already have. Where a site has no metering, we ship clip-on sensors that take an hour to fit."
+									"icon": "chart",
+									"title": "Consult",
+									"description": "Start with a free 15-minute virtual skin consultation from home."
 								},
 								{
-									"question": "How quickly will we see savings?",
-									"answer": "Most teams act on their first findings within two weeks of connecting a building. The early fixes are usually schedule and setpoint changes, such as plant that runs overnight or heating in empty rooms. The savings report at day 30 measures each change against the building's own baseline."
+									"icon": "heart",
+									"title": "Customise",
+									"description": "Together we choose the treatments that fit your skin type and goals."
 								},
 								{
-									"question": "Which reporting frameworks do you support?",
-									"answer": "Halden prepares CSRD, GRESB, ENERGY STAR, SECR and NABERS reports from the same metered data, so the figures agree across every submission. Your auditor can have read-only access to the readings behind each number."
+									"icon": "leaf",
+									"title": "Treat",
+									"description": "Relax in our Plano studio while advanced technology does its work."
 								},
 								{
-									"question": "Is our data secure?",
-									"answer": "Halden is audited every year against SOC 2 Type II and certified to ISO 27001. You choose EU or US hosting, and your meter data is encrypted in transit and at rest."
-								},
-								{
-									"question": "Can Halden change settings on its own?",
-									"answer": "Only inside limits you set, such as comfort bands, occupancy hours and equipment you mark as off limits. Every change is logged with the reason it was made, and anyone on your team can roll it back."
+									"icon": "sun",
+									"title": "Glow",
+									"description": "Leave radiant, with the guidance to keep your results going."
 								}
 							]
 						},
 						{
 							"_type": "marketing_cta",
 							"_version": 1,
-							"_key": "cta",
-							"headline": "See what your buildings could save.",
-							"body": "Book a 30-minute walkthrough with a building engineer. Bring a utility bill and we will bring the numbers.",
-							"primary_cta_label": "Book a demo",
-							"primary_cta_url": "/contact",
-							"secondary_cta_label": "Talk to sales",
-							"secondary_cta_url": "mailto:sales@halden.example",
+							"_key": "cta-100",
+							"headline": "Give the gift of glowing skin.",
+							"body": "Indulge your loved ones with the gift of relaxation. Choose an amount, add a personal message and we will take care of the rest.",
+							"primary_cta_label": "Gift cards",
+							"primary_cta_url": "/gift-card",
+							"secondary_cta_label": "Book a treatment",
+							"secondary_cta_url": "/book-online",
 							"image": {
-								"$media": {
-									"url": "https://images.unsplash.com/photo-1674763973434-75e1930d4959?w=2400&h=1350&fit=crop&q=80&fm=jpg",
-									"alt": "Timber-lined atrium opening to the sky",
-									"filename": "halden-timber-atrium.jpg"
+								"id": "static-gift-hands-jpg",
+								"src": "/img/gift-hands.jpg",
+								"alt": "Gift card"
+							}
+						},
+						{
+							"_type": "marketing_contact",
+							"_version": 1,
+							"_key": "contact-101",
+							"eyebrow": "Visit the studio",
+							"headline": "Come say hello.",
+							"options": [
+								{
+									"icon": "location",
+									"title": "Studio",
+									"description": "Cross Roads Salon Suites\n3033 W. Parker Rd., Suite 113\nPlano, TX 75023 · Room 111",
+									"link_label": "Get directions",
+									"link_url": "https://www.google.com/maps?q=3033+W+Parker+Rd+Suite+113+Plano+TX+75023"
+								},
+								{
+									"icon": "phone",
+									"title": "Call us",
+									"description": "Questions or bookings by phone.",
+									"link_label": "(214) 944-0191",
+									"link_url": "tel:+12149440191"
+								},
+								{
+									"icon": "email",
+									"title": "Email",
+									"description": "We reply as soon as we can.",
+									"link_label": "skincarebimee@gmail.com",
+									"link_url": "mailto:skincarebimee@gmail.com"
 								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"id": "about",
+				"slug": "about",
+				"status": "published",
+				"data": {
+					"title": "About",
+					"content": [
+						{
+							"_type": "marketing_hero",
+							"_version": 1,
+							"_key": "hero-102",
+							"eyebrow": "About",
+							"headline": "Where science meets art.",
+							"subheadline": "My mission is to help you achieve healthy, radiant skin — with care, expertise and the latest technology.",
+							"centered": true
+						},
+						{
+							"_type": "marketing_split",
+							"_version": 1,
+							"_key": "split-103",
+							"eyebrow": "My story",
+							"headline": "A passion that began with my own skin.",
+							"body": "From a young age, I was fascinated by the world of skincare and beauty. My passion truly blossomed in high school when I struggled with acne. The transformation I experienced after seeing an esthetician was life-changing and planted the seed for my future career.\n\nI was captivated by the complexities of the human body and the science behind healing. That curiosity led me towards the medical field — but it was my own battle with skin issues that redirected my path to esthetics. Transforming my skin through medical-grade treatments and skincare ignited a passion for helping others achieve the same.\n\nAfter several years, I pursued further education and became licensed in esthetics, training extensively in skin types, treatments and the latest skincare technology. This blend of medical insight and esthetic expertise lets me approach beauty treatments with a unique perspective.\n\nAs a medical esthetician, I specialise in treatments that require a deeper understanding of the skin's structure and healing processes — from advanced chemical peels to microneedling. Now I am here to help you reach your skincare goals while ensuring your safety and well-being.",
+							"image": {
+								"id": "static-owner-jpg",
+								"src": "/img/owner.jpg",
+								"alt": "Your esthetician"
+							},
+							"image_first": true
+						},
+						{
+							"_type": "marketing_features",
+							"_version": 1,
+							"_key": "features-104",
+							"eyebrow": "My approach",
+							"headline": "Healthy skin is a combination of science and art.",
+							"features": [
+								{
+									"icon": "users",
+									"title": "Understand",
+									"description": "We take the time to understand your skin and your goals before anything else."
+								},
+								{
+									"icon": "heart",
+									"title": "Personalise",
+									"description": "A bespoke treatment plan crafted just for you — no one-size-fits-all."
+								},
+								{
+									"icon": "shield",
+									"title": "Protect",
+									"description": "Medical insight and the latest technology, always with your safety first."
+								}
+							]
+						},
+						{
+							"_type": "marketing_cta",
+							"_version": 1,
+							"_key": "cta-105",
+							"headline": "Let’s meet your skin.",
+							"body": "Book a treatment or start with a free virtual consultation.",
+							"primary_cta_label": "Book now",
+							"primary_cta_url": "/book-online",
+							"secondary_cta_label": "Free consultation",
+							"secondary_cta_url": "/book-online?service=skin-consultation",
+							"image": {
+								"id": "static-facial-portrait-jpg",
+								"src": "/img/facial-portrait.jpg",
+								"alt": "Facial portrait"
 							}
 						}
 					]
 				}
 			},
 			{
-				"id": "pricing",
-				"slug": "pricing",
+				"id": "virtual-services",
+				"slug": "virtual-services",
 				"status": "published",
 				"data": {
-					"title": "Pricing",
+					"title": "Virtual Services",
 					"content": [
 						{
 							"_type": "marketing_hero",
 							"_version": 1,
-							"_key": "pricing-hero",
-							"headline": "Pricing that pays for itself.",
-							"subheadline": "Start with one building for free. Every plan includes onboarding, live metering and support from energy engineers.",
-							"centered": true
+							"_key": "hero-106",
+							"eyebrow": "Virtual services",
+							"headline": "Expert skincare, from home.",
+							"subheadline": "Our virtual services offer a convenient way to address your specific needs and achieve healthier, happier skin.",
+							"image": {
+								"id": "static-virtual-laptop-jpg",
+								"src": "/img/virtual-laptop.jpg",
+								"alt": "Virtual consultation on a laptop"
+							},
+							"primary_cta_label": "Book free consultation",
+							"primary_cta_url": "/book-online?service=skin-consultation"
 						},
 						{
-							"_type": "marketing_pricing",
+							"_type": "marketing_split",
 							"_version": 1,
-							"_key": "pricing-plans",
-							"plans": [
+							"_key": "split-107",
+							"eyebrow": "Free · 15 min",
+							"headline": "Skin Consultation",
+							"body": "Explore solutions to your skin concerns and get answers to your questions, all from the comfort of your own home.",
+							"cta_label": "Book now",
+							"cta_url": "/book-online?service=skin-consultation",
+							"image": {
+								"id": "static-consultation-jpg",
+								"src": "/img/consultation.jpg",
+								"alt": "Skin consultation"
+							},
+							"image_first": true
+						},
+						{
+							"_type": "marketing_split",
+							"_version": 1,
+							"_key": "split-108",
+							"eyebrow": "Enquire",
+							"headline": "Skin Care Party",
+							"body": "Gather your friends for a fun, guided skincare experience — together, wherever you are.",
+							"cta_label": "Get in touch",
+							"cta_url": "/contact",
+							"image": {
+								"id": "static-skin-party-jpg",
+								"src": "/img/skin-party.jpg",
+								"alt": "Skin care party"
+							},
+							"image_first": false
+						},
+						{
+							"_type": "marketing_split",
+							"_version": 1,
+							"_key": "split-109",
+							"eyebrow": "Enquire",
+							"headline": "Skin Assessment",
+							"body": "A closer look at your skin type, concerns and routine, with advice to help you move forward.",
+							"cta_label": "Get in touch",
+							"cta_url": "/contact",
+							"image": {
+								"id": "static-virtual-laptop-jpg",
+								"src": "/img/virtual-laptop.jpg",
+								"alt": "Skin assessment online"
+							},
+							"image_first": true
+						},
+						{
+							"_type": "marketing_features",
+							"_version": 1,
+							"_key": "features-110",
+							"eyebrow": "How it works",
+							"headline": "Three simple steps.",
+							"features": [
 								{
-									"name": "Pilot",
-									"price": "Free",
-									"period": "for 30 days",
-									"description": "Prove the savings on one building before you commit.",
-									"features": "1 building\nLive metering and fault detection\nSavings report at day 30\nEmail support",
-									"cta_label": "Start a pilot",
-									"cta_url": "/contact"
+									"icon": "clock",
+									"title": "Book",
+									"description": "Choose a virtual service and a time that suits you."
 								},
 								{
-									"name": "Portfolio",
-									"price": "$149",
-									"period": "/building/month",
-									"description": "For owners and operators running 5 to 500 buildings.",
-									"features": "Unlimited buildings and users\nAutomated BMS control\nCSRD, GRESB and ENERGY STAR reporting\nPortfolio benchmarking\nA dedicated energy engineer",
-									"cta_label": "Book a demo",
-									"cta_url": "/contact",
-									"highlighted": true,
-									"badge": "Most popular"
+									"icon": "globe",
+									"title": "Meet online",
+									"description": "Join from home and talk through your skin and your goals."
 								},
 								{
-									"name": "Enterprise",
-									"price": "Custom",
-									"description": "For global portfolios with custom integration and security needs.",
-									"features": "Everything in Portfolio\nSSO, SCIM and audit logs\nEU or US data residency\nCustom integrations and API access\n99.9% uptime SLA",
-									"cta_label": "Talk to sales",
-									"cta_url": "mailto:sales@halden.example"
+									"icon": "sun",
+									"title": "Glow on",
+									"description": "Leave with personalised advice, and book in-studio treatments when you are ready."
 								}
 							]
-						},
-						{
-							"_type": "marketing_faq",
-							"_version": 1,
-							"_key": "pricing-faq",
-							"headline": "Pricing questions.",
-							"subheadline": "Still deciding? Talk to an energy engineer before you start a pilot.",
-							"items": [
-								{
-									"question": "What counts as a building?",
-									"answer": "Any site with its own utility meter or building management system, from a 40-storey office tower to a single retail unit. Several buildings on one shared meter count as one until you add sub-meters to measure them separately."
-								},
-								{
-									"question": "Are there setup fees?",
-									"answer": "No. Every plan, including the pilot, covers onboarding, connecting your meters and building systems, and training for your team. Clip-on sensors for unmetered sites are supplied at cost."
-								},
-								{
-									"question": "Is there a discount for annual billing?",
-									"answer": "Yes. Annual billing takes 15% off the Portfolio price and is invoiced on NET 30 terms. You can move from monthly to annual billing at any time."
-								},
-								{
-									"question": "What happens after the pilot?",
-									"answer": "On day 30 you receive a savings report for the pilot building. Move to the Portfolio plan to keep its data, alerts and automations running, or stop there and we delete the data within 30 days."
-								}
-							]
-						},
-						{
-							"_type": "marketing_cta",
-							"_version": 1,
-							"_key": "pricing-cta",
-							"headline": "Start with one building.",
-							"body": "Connect a site in an afternoon and see your first savings report in 30 days.",
-							"primary_cta_label": "Start a pilot",
-							"primary_cta_url": "/contact",
-							"secondary_cta_label": "Talk to sales",
-							"secondary_cta_url": "mailto:sales@halden.example"
 						}
 					]
 				}
 			},
 			{
-				"id": "contact",
-				"slug": "contact",
+				"id": "shop",
+				"slug": "shop",
 				"status": "published",
 				"data": {
-					"title": "Contact",
+					"title": "Shop",
 					"content": [
 						{
 							"_type": "marketing_hero",
 							"_version": 1,
-							"_key": "contact-hero",
-							"headline": "Talk to the Halden team",
-							"subheadline": "Questions, a demo, or a building you want us to look at? Email the team that can help and include any useful context. We reply within one working day.",
-							"centered": true
+							"_key": "hero-111",
+							"eyebrow": "Shop",
+							"headline": "Skincare, to take home.",
+							"subheadline": "Curated products and gifts, chosen to keep your skin glowing between visits.",
+							"image": {
+								"id": "static-oils-jpg",
+								"src": "/img/oils.jpg",
+								"alt": "Skincare oils"
+							}
 						},
 						{
-							"_type": "marketing_contact",
+							"_type": "marketing_split",
 							"_version": 1,
-							"_key": "contact-options",
-							"options": [
+							"_key": "split-112",
+							"eyebrow": "Available now",
+							"headline": "eGift Card",
+							"body": "Choose $50, $100 or $150, add a personal message and send it instantly by email — or receive it in your own inbox to print.",
+							"cta_label": "Buy a gift card",
+							"cta_url": "/gift-card",
+							"image": {
+								"id": "static-gift-cert-jpg",
+								"src": "/img/gift-cert.jpg",
+								"alt": "Gift certificate"
+							},
+							"image_first": true
+						},
+						{
+							"_type": "marketing_cta",
+							"_version": 1,
+							"_key": "cta-113",
+							"headline": "More products arriving soon.",
+							"body": "Our at-home facial kits and skincare products are on their way. Let us know and we will tell you first.",
+							"primary_cta_label": "Notify me",
+							"primary_cta_url": "mailto:skincarebimee@gmail.com?subject=Notify%20me%20about%20new%20products",
+							"image": {
+								"id": "static-kit-jpg",
+								"src": "/img/kit.jpg",
+								"alt": "At-home facial kit"
+							}
+						}
+					]
+				}
+			}
+		],
+		"services": [
+			{
+				"id": "facial",
+				"slug": "facial",
+				"status": "published",
+				"data": {
+					"title": "Facial",
+					"short": "A deep-cleansing, circulation-boosting ritual with exfoliation, mask, moisturiser and SPF.",
+					"lead": "A personalised facial that cleanses deeply, exfoliates away dull skin and leaves you hydrated, protected and glowing.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b-1",
+							"style": "normal",
+							"children": [
 								{
-									"icon": "email",
-									"title": "General questions",
-									"description": "Ask about Halden, partnerships, press, or a building you’d like us to look at.",
-									"link_label": "hello@halden.example",
-									"link_url": "mailto:hello@halden.example"
-								},
+									"_type": "span",
+									"_key": "s-2",
+									"text": "A facial is a skin-care treatment designed to deeply cleanse, improve circulation, exfoliate to remove dead skin cells, then mask, moisturise and protect with SPF."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-3",
+							"style": "normal",
+							"children": [
 								{
-									"icon": "support",
-									"title": "Customer support",
-									"description": "Get help with your account, a meter integration, or a building that’s already connected.",
-									"link_label": "support@halden.example",
-									"link_url": "mailto:support@halden.example"
-								},
+									"_type": "span",
+									"_key": "s-4",
+									"text": "We also help with common skin concerns like ageing, dry skin, acne and hyperpigmentation. Some facials incorporate oxygen, high-frequency microcurrents, dermaplaning and LED light to deliver more intense or specific results."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-5",
+							"style": "normal",
+							"children": [
 								{
-									"icon": "sales",
-									"title": "Sales",
-									"description": "Talk through pricing, a pilot, procurement or a security review for your portfolio.",
-									"link_label": "sales@halden.example",
-									"link_url": "mailto:sales@halden.example"
+									"_type": "span",
+									"_key": "s-6",
+									"text": "Facials can also be combined with chemical peels, microdermabrasion and microneedling for more comprehensive results."
+								}
+							]
+						}
+					],
+					"duration": "1 hr",
+					"price": 95,
+					"category": "face",
+					"soon": false,
+					"sort": 1,
+					"image": {
+						"id": "static-facial-jpg",
+						"src": "/img/facial.jpg",
+						"alt": "Facial"
+					},
+					"ideal": "Ageing\nDry skin\nAcne\nHyperpigmentation",
+					"highlights": "Deep cleanse | Lifts away impurities and prepares skin for treatment.\nExfoliation | Removes dead skin cells for a smoother surface.\nCirculation boost | Encourages a healthy, rested glow.\nMask, moisturiser & SPF | Nourish first, then protect your results.",
+					"pair": "chemical-peels\nmicrodermabraison\nled-light-therapy"
+				}
+			},
+			{
+				"id": "pro-pen-luminfusion",
+				"slug": "pro-pen-luminfusion",
+				"status": "published",
+				"data": {
+					"title": "Pro Pen Luminfusion",
+					"short": "A “supercharged” Dermalogica facial that delivers actives deeper — instant glow, no downtime.",
+					"lead": "A professional, non-invasive skin-resurfacing treatment developed by Dermalogica — instant glow with no downtime.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b-7",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-8",
+									"text": "LuminFusion is a “supercharged” facial that uses the Dermalogica Pro Pen — a professional-grade device with stainless steel cone nanotips — to deliver active ingredients deep into the skin."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-9",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-10",
+									"text": "It works alongside professional-strength exfoliants and a light-energy masque, followed by red light therapy to enhance results."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-11",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-12",
+									"text": "This service creates an instant glow and diminishes the signs of skin ageing, all with no downtime."
+								}
+							]
+						}
+					],
+					"duration": "1 hr",
+					"price": 130,
+					"category": "advanced",
+					"soon": false,
+					"sort": 2,
+					"image": {
+						"id": "static-pro-pen-jpg",
+						"src": "/img/pro-pen.jpg",
+						"alt": "Pro Pen Luminfusion"
+					},
+					"ideal": "Dull skin\nFine lines & wrinkles\nEye area\nSpecial-event glow",
+					"highlights": "Improves luminosity | Brighter, more radiant-looking skin.\nSmooths fine lines | Softens the look of lines and wrinkles.\nTargets the eye area | Precision care for delicate skin.\nInstant glow | Visible radiance with no downtime.",
+					"pair": "led-light-therapy\nlip-and-eye-treatment\nfacial"
+				}
+			},
+			{
+				"id": "chemical-peels",
+				"slug": "chemical-peels",
+				"status": "published",
+				"data": {
+					"title": "Chemical Peels",
+					"short": "Refine texture and even out tone by removing the damaged outer layers of skin.",
+					"lead": "A chemical solution that improves the texture and tone of your skin by removing the damaged outer layers.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b-13",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-14",
+									"text": "A chemical peel uses a chemical solution to improve the texture and tone of your skin by removing the damaged outer layers."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-15",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-16",
+									"text": "Although chemical peels are used mostly on the face, they can also be used to improve the skin on your neck and hands. Sun exposure, acne or just getting older can leave your skin tone uneven, wrinkled, spotted or scarred."
+								}
+							]
+						}
+					],
+					"duration": "30 min",
+					"price": 60,
+					"category": "advanced",
+					"soon": false,
+					"sort": 3,
+					"image": {
+						"id": "static-chemical-peel-jpg",
+						"src": "/img/chemical-peel.jpg",
+						"alt": "Chemical Peels"
+					},
+					"ideal": "Uneven tone\nWrinkles\nSun spots\nAcne marks",
+					"highlights": "Texture refinement | A smoother, more even surface.\nTone correction | Targets spots and uneven pigmentation.\nFace, neck & hands | Not just for the face.",
+					"pair": "facial\nmicrodermabraison\nled-light-therapy"
+				}
+			},
+			{
+				"id": "microdermabraison",
+				"slug": "microdermabraison",
+				"status": "published",
+				"data": {
+					"title": "Microdermabrasion",
+					"short": "Helps thicken collagen for a younger-looking complexion.",
+					"lead": "A resurfacing treatment that helps thicken your collagen for a younger-looking complexion.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b-17",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-18",
+									"text": "Microdermabrasion helps to thicken your collagen, which results in a younger-looking complexion."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-19",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-20",
+									"text": "Collagen is a protein in your skin which is abundant when you're a child and makes skin appear taut and smooth. Collagen production declines as we age, resulting in looser, uneven skin."
+								}
+							]
+						}
+					],
+					"duration": "15 min",
+					"price": 50,
+					"category": "advanced",
+					"soon": false,
+					"sort": 4,
+					"image": {
+						"id": "static-microdermabrasion-jpg",
+						"src": "/img/microdermabrasion.jpg",
+						"alt": "Microdermabrasion"
+					},
+					"ideal": "Loose or uneven skin\nEarly signs of ageing\nTexture concerns",
+					"highlights": "Collagen support | Helps skin look firmer and smoother.\nQuick 15 minutes | Easy to add to a facial.\nCombines well | Pairs with facials and peels.",
+					"pair": "facial\nchemical-peels\nled-light-therapy"
+				}
+			},
+			{
+				"id": "led-light-therapy",
+				"slug": "led-light-therapy",
+				"status": "published",
+				"data": {
+					"title": "LED Light Therapy",
+					"short": "Non-invasive light wavelengths to help with acne, fine lines and healing.",
+					"lead": "A non-invasive treatment using different wavelengths of light to help with acne, fine lines and healing.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b-21",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-22",
+									"text": "LED light therapy is a non-invasive treatment that utilises different wavelengths of infrared light to help treat various skin issues such as acne, fine lines and wound healing."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-23",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-24",
+									"text": "Many of our facials incorporate LED light to deliver specific results — or add it on its own in just 15 minutes."
+								}
+							]
+						}
+					],
+					"duration": "15 min",
+					"price": 40,
+					"category": "face",
+					"soon": false,
+					"sort": 5,
+					"image": {
+						"id": "static-led-green-jpg",
+						"src": "/img/led-green.jpg",
+						"alt": "LED Light Therapy"
+					},
+					"ideal": "Acne\nFine lines\nSkin healing",
+					"highlights": "Non-invasive | Relaxing, comfortable and gentle.\nTargeted wavelengths | Different light for different concerns.\n15 minutes | A quick add-on to any visit.",
+					"pair": "facial\npro-pen-luminfusion\nchemical-peels"
+				}
+			},
+			{
+				"id": "lip-and-eye-treatment",
+				"slug": "lip-and-eye-treatment",
+				"status": "published",
+				"data": {
+					"title": "Lip & Eye Treatment",
+					"short": "A customised treatment for eyes, lips and décolleté — brighter, less puffy, hydrated.",
+					"lead": "Treat your eyes, lips and décolleté to a customised treatment for the most delicate areas.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b-25",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-26",
+									"text": "Treat your eyes, lips and décolleté to a customised treatment targeted to these delicate areas, reduce puffiness and leave eyes feeling brighter."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-27",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-28",
+									"text": "A lip treatment typically involves gentle exfoliation, hydration and plumping to improve texture, colour and definition."
+								}
+							]
+						}
+					],
+					"duration": "15 min",
+					"price": 40,
+					"category": "face",
+					"soon": false,
+					"sort": 6,
+					"image": {
+						"id": "static-lip-eye-jpg",
+						"src": "/img/lip-eye.jpg",
+						"alt": "Lip & Eye Treatment"
+					},
+					"ideal": "Dry, flaky lips\nPuffy eyes\nDelicate skin",
+					"highlights": "Removes dry skin | Gentle exfoliation for soft lips.\nHydrates | Antioxidants and nourishing serums.\nPlumps & smooths | A fuller, more youthful look.\nRestores shine | Enhances natural colour.",
+					"pair": "facial\npro-pen-luminfusion\nled-light-therapy"
+				}
+			},
+			{
+				"id": "back-treatment",
+				"slug": "back-treatment",
+				"status": "published",
+				"data": {
+					"title": "Back Treatment",
+					"short": "A back facial for the often-overlooked skin on your upper and mid-back.",
+					"lead": "A back facial tailored to the unique needs of the skin on your upper and mid-back.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b-29",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-30",
+									"text": "A back treatment in skincare — most commonly called a back facial — is a professional skincare session designed to address the unique needs of the skin on your back."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-31",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-32",
+									"text": "It follows the same core steps as a traditional facial but is tailored for the often-overlooked upper and mid-back area, which can be prone to acne, clogged pores, dryness, rough texture and uneven tone."
+								}
+							]
+						}
+					],
+					"duration": "30 min",
+					"price": 85,
+					"category": "body",
+					"soon": false,
+					"sort": 7,
+					"image": {
+						"id": "static-back-treatment-jpg",
+						"src": "/img/back-treatment.jpg",
+						"alt": "Back Treatment"
+					},
+					"ideal": "Back acne\nClogged pores\nDryness\nRough texture\nUneven tone",
+					"highlights": "Deep cleanse | Clears congestion from pores.\nExfoliation | Smooths rough texture.\nHydration | Comforts dry, tight skin.",
+					"pair": "facial\nchemical-peels\nled-light-therapy"
+				}
+			},
+			{
+				"id": "skin-consultation",
+				"slug": "skin-consultation",
+				"status": "published",
+				"data": {
+					"title": "Skin Consultation",
+					"short": "A free virtual consultation — solutions and answers from the comfort of home.",
+					"lead": "Explore solutions to your skin concerns and get answers to your questions — all from home.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b-33",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-34",
+									"text": "Explore solutions to your skin concerns and get answers to your questions, all from the comfort of your own home."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-35",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-36",
+									"text": "Our virtual skincare consultations offer a convenient way to address your specific needs and achieve healthier, happier skin."
+								}
+							]
+						}
+					],
+					"duration": "15 min",
+					"price": 0,
+					"category": "virtual",
+					"soon": false,
+					"sort": 8,
+					"image": {
+						"id": "static-consultation-jpg",
+						"src": "/img/consultation.jpg",
+						"alt": "Skin Consultation"
+					},
+					"ideal": "New clients\nChoosing a treatment\nRoutine questions",
+					"highlights": "Free | No cost, no commitment.\nFrom home | Meet online, wherever you are.\nPersonal advice | Tailored to your concerns.",
+					"pair": "facial\npro-pen-luminfusion\nchemical-peels"
+				}
+			},
+			{
+				"id": "dermaplaning",
+				"slug": "dermaplaning",
+				"status": "published",
+				"data": {
+					"title": "Dermaplaning",
+					"short": "Exfoliating blade treatment for a smooth, radiant surface — coming soon.",
+					"lead": "An exfoliating blade treatment for a smooth, radiant surface. Launching soon.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b-37",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-38",
+									"text": "Dermaplaning is a skin treatment that uses an exfoliating blade to skim dead skin cells and hair from your face. It's also called microplaning or blading."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-39",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-40",
+									"text": "Dermaplaning aims to make your skin's surface smooth, youthful and radiant. It's also used to remove “peach fuzz” — the short, soft hairs on your face."
+								}
+							]
+						}
+					],
+					"duration": "",
+					"category": "soon",
+					"soon": true,
+					"sort": 9,
+					"image": {
+						"id": "static-dermaplaning-jpg",
+						"src": "/img/dermaplaning.jpg",
+						"alt": "Dermaplaning"
+					},
+					"ideal": "Dull surface\nPeach fuzz\nSmoother make-up application",
+					"highlights": "Exfoliates | Skims away dead skin cells.\nRemoves peach fuzz | Soft, fine facial hair.\nRadiant finish | A smooth, youthful surface.",
+					"pair": "facial\nchemical-peels\nled-light-therapy"
+				}
+			},
+			{
+				"id": "microneedling",
+				"slug": "microneedling",
+				"status": "published",
+				"data": {
+					"title": "Microneedling",
+					"short": "Collagen induction therapy for scars, pores and texture — coming soon.",
+					"lead": "Collagen induction therapy that helps skin repair itself naturally. Launching soon.",
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b-41",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-42",
+									"text": "Microneedling, also called percutaneous collagen induction therapy, is performed using a handheld, drum- or pen-shaped device, electrically powered, with tiny needles that make precise, microscopic punctures in the skin."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-43",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-44",
+									"text": "These “micro-injuries” do not leave scars; they work by helping to stimulate the skin to repair itself naturally through a process called dermal remodelling."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-45",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-46",
+									"text": "Microneedling is used to treat a variety of skin conditions that cause depressions in the skin such as acne scarring, surgical scars, other scars, burns, enlarged pores, wrinkles and stretch marks."
+								}
+							]
+						}
+					],
+					"duration": "",
+					"category": "soon",
+					"soon": true,
+					"sort": 10,
+					"image": {
+						"id": "static-microneedling-jpg",
+						"src": "/img/microneedling.jpg",
+						"alt": "Microneedling"
+					},
+					"ideal": "Acne scarring\nEnlarged pores\nWrinkles\nStretch marks",
+					"highlights": "Dermal remodelling | Stimulates natural skin repair.\nPrecise | Controlled, microscopic punctures.\nMany concerns | Scars, pores, lines and more.",
+					"pair": "facial\nchemical-peels\nled-light-therapy"
+				}
+			}
+		],
+		"posts": [
+			{
+				"id": "facial-vs-chemical-peel",
+				"slug": "facial-vs-chemical-peel",
+				"status": "published",
+				"data": {
+					"title": "Facial or chemical peel: which is right for you?",
+					"tag": "Treatments",
+					"read_time": "3 min read",
+					"posted": "October 2026",
+					"excerpt": "Both refresh your skin, but they work differently. Here is how to choose — or combine them.",
+					"image": {
+						"id": "static-facial-portrait-jpg",
+						"src": "/img/facial-portrait.jpg",
+						"alt": "Facial or chemical peel: which is right for you?"
+					},
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b-47",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-48",
+									"text": "Booking your first professional treatment can feel like a menu with too many options. Two of the most popular — a facial and a chemical peel — are often confused, so here is a quick way to tell them apart."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-49",
+							"style": "h2",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-50",
+									"text": "What a facial does"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-51",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-52",
+									"text": "A facial is designed to deeply cleanse, improve circulation, exfoliate to remove dead skin cells, then mask, moisturise and protect with SPF. It is a great fit if you are dealing with ageing, dry skin, acne or hyperpigmentation and want a complete, relaxing reset."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-53",
+							"style": "h2",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-54",
+									"text": "What a chemical peel does"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-55",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-56",
+									"text": "A chemical peel uses a chemical solution to improve the texture and tone of your skin by removing the damaged outer layers. It can also be used on the neck and hands. If sun exposure, acne or time have left your skin uneven, spotted or scarred, a peel is a more targeted option."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-57",
+							"style": "blockquote",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-58",
+									"text": "The best results often come from combining treatments, not choosing just one."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-59",
+							"style": "h2",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-60",
+									"text": "Can I combine them?"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-61",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-62",
+									"text": "Yes. Facials may be combined with chemical peels, microdermabrasion and microneedling for more comprehensive results. If you are not sure where to start, a free virtual skin consultation is the easiest way to get a personalised recommendation."
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"id": "back-facial-guide",
+				"slug": "back-facial-guide",
+				"status": "published",
+				"data": {
+					"title": "Back facials: the treatment your skin is missing",
+					"tag": "Body",
+					"read_time": "2 min read",
+					"posted": "September 2026",
+					"excerpt": "Your back gets as much sun, sweat and friction as your face — yet rarely gets the same care.",
+					"image": {
+						"id": "static-back-treatment-jpg",
+						"src": "/img/back-treatment.jpg",
+						"alt": "Back facials: the treatment your skin is missing"
+					},
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b-63",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-64",
+									"text": "We give our faces daily attention, but the skin on our backs is often forgotten until summer or a special event. A back facial changes that."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-65",
+							"style": "h2",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-66",
+									"text": "What is a back facial?"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-67",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-68",
+									"text": "A back treatment — most commonly called a back facial — is a professional skincare session designed to address the unique needs of the skin on your back. It follows the same core steps as a traditional facial but is tailored for the upper and mid-back."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-69",
+							"style": "h2",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-70",
+									"text": "Who is it for?"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-71",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-72",
+									"text": "The back can be prone to acne, clogged pores, dryness, rough texture and uneven tone. If any of that sounds familiar, a 30-minute session is a simple way to deep-clean, smooth and hydrate."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-73",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-74",
+									"text": "Targets back acne and congestion"
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "b-75",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-76",
+									"text": "Smooths rough, bumpy texture"
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "b-77",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-78",
+									"text": "Hydrates dry, tight skin"
+								}
+							],
+							"listItem": "bullet",
+							"level": 1
+						},
+						{
+							"_type": "block",
+							"_key": "b-79",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-80",
+									"text": "Ready to treat your back? Book online or call us to find a time that suits you."
+								}
+							]
+						}
+					]
+				}
+			},
+			{
+				"id": "led-light-therapy-explained",
+				"slug": "led-light-therapy-explained",
+				"status": "published",
+				"data": {
+					"title": "LED light therapy, explained simply",
+					"tag": "Technology",
+					"read_time": "2 min read",
+					"posted": "August 2026",
+					"excerpt": "A non-invasive treatment that uses light to support clearer, smoother-looking skin.",
+					"image": {
+						"id": "static-led-green-jpg",
+						"src": "/img/led-green.jpg",
+						"alt": "LED light therapy, explained simply"
+					},
+					"content": [
+						{
+							"_type": "block",
+							"_key": "b-81",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-82",
+									"text": "LED light therapy sounds high-tech, but the experience is calm and comfortable: you relax while specific wavelengths of light are directed at your skin."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-83",
+							"style": "h2",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-84",
+									"text": "How does it work?"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-85",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-86",
+									"text": "LED light therapy is a non-invasive treatment that uses different wavelengths of infrared light to help treat various skin issues such as acne, fine lines and wound healing. Different wavelengths are chosen for different concerns."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-87",
+							"style": "h2",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-88",
+									"text": "How long does it take?"
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-89",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-90",
+									"text": "A stand-alone LED session takes about 15 minutes. It is also built into many facials, and the Pro Pen Luminfusion finishes with red light therapy to enhance results."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-91",
+							"style": "blockquote",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-92",
+									"text": "Fifteen minutes, no downtime, and a treatment you can add to almost any visit."
+								}
+							]
+						},
+						{
+							"_type": "block",
+							"_key": "b-93",
+							"style": "normal",
+							"children": [
+								{
+									"_type": "span",
+									"_key": "s-94",
+									"text": "Curious whether LED is right for your skin? Book a free virtual consultation and we will talk it through."
 								}
 							]
 						}

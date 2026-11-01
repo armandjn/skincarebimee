@@ -1,0 +1,50 @@
+---
+interface Props {
+	api: string;
+	subject: string;
+	success: string;
+	class?: string;
+	button?: string;
+}
+const { api, subject, success, class: cls = "bimee-form", button = "Send" } = Astro.props;
+---
+
+<form class={cls} data-api={api} data-subject={subject} data-success={success} novalidate>
+	<slot />
+	<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px" />
+	<div><button class="btn btn-primary btn-lg" type="submit">{button}</button></div>
+	<div class="bimee-status" role="status"></div>
+</form>
+
+<script>
+	document.querySelectorAll<HTMLFormElement>("form[data-api]").forEach((form) => {
+		form.addEventListener("submit", async (e) => {
+			e.preventDefault();
+			const status = form.querySelector<HTMLElement>(".bimee-status")!;
+			const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+			const missing = Array.from(form.querySelectorAll<HTMLInputElement>("[required]")).find((el) => !el.value.trim());
+			if (missing) {
+				missing.focus();
+				status.textContent = "Please fill in the required fields.";
+				status.classList.add("is-on");
+				return;
+			}
+			const mailto = () => {
+				const body = Object.entries(data).filter(([k, v]) => v && k !== "website").map(([k, v]) => `${k}: ${v}`).join("\n");
+				location.href = `mailto:skincarebimee@gmail.com?subject=${encodeURIComponent(form.dataset.subject || "Website enquiry")}&body=${encodeURIComponent(body)}`;
+			};
+			try {
+				const res = await fetch(form.dataset.api!, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(data) });
+				const out = await res.json().catch(() => ({}));
+				if (!res.ok || !out.ok) throw new Error(out.error || "failed");
+				status.textContent = form.dataset.success || "Thank you!";
+				status.classList.add("is-on");
+				form.reset();
+			} catch {
+				status.textContent = "We could not send this online, so your email app will open instead.";
+				status.classList.add("is-on");
+				mailto();
+			}
+		});
+	});
+</script>

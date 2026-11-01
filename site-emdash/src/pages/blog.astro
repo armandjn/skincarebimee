@@ -1,0 +1,30 @@
+---
+import { getEmDashCollection } from "emdash";
+import Base from "../layouts/Base.astro";
+import { imgSrc } from "../utils/svc";
+
+const { entries: posts, cacheHint } = await getEmDashCollection("posts", { orderBy: { published_at: "desc" } });
+if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
+---
+
+<Base title="Journal" description="The Skincare Bimee journal: expert skincare tips, treatment guides and product insight.">
+	<header class="container bimee-hero">
+		<p class="eyebrow">Journal</p>
+		<h1>Skin notes</h1>
+		<p class="lead">Expert tips and straight answers on treatments, technology and caring for your skin.</p>
+	</header>
+	<section class="container">
+		<div class="bimee-grid">
+			{posts.map((p) => (
+				<a class="bimee-card" href={`/post-${p.id}`}>
+					<img src={imgSrc(p.data.image)} alt="" loading="lazy" />
+					<div class="bimee-card__body">
+						<span class="bimee-card__meta">{[p.data.tag, p.data.read_time].filter(Boolean).join(" · ")}</span>
+						<h3>{p.data.title}</h3>
+						<p>{p.data.excerpt}</p>
+					</div>
+				</a>
+			))}
+		</div>
+	</section>
+</Base>

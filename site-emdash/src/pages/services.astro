@@ -1,0 +1,53 @@
+---
+import { getEmDashCollection } from "emdash";
+import Base from "../layouts/Base.astro";
+import { CATEGORIES, imgSrc, money } from "../utils/svc";
+
+const { entries, cacheHint } = await getEmDashCollection("services", { orderBy: { sort: "asc" } });
+if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
+const services = [...entries].sort((a, b) => (a.data.sort ?? 0) - (b.data.sort ?? 0));
+---
+
+<Base title="Services" description="Facials, chemical peels, microdermabrasion, LED light therapy, Pro Pen Luminfusion, lip & eye and back treatments in Plano, TX.">
+	<header class="container bimee-hero">
+		<p class="eyebrow">Services</p>
+		<h1>Treatments designed for you</h1>
+		<p class="lead">From personalised facials to advanced resurfacing — every treatment is tailored to your skin and your goals.</p>
+	</header>
+	<section class="container">
+		<div class="bimee-filters" role="group" aria-label="Filter services">
+			{CATEGORIES.map(([value, label], i) => (
+				<button type="button" class:list={["btn btn-sm", i === 0 ? "btn-primary" : "btn-secondary"]} data-filter={value} aria-pressed={i === 0}>{label}</button>
+			))}
+		</div>
+		<div class="bimee-grid">
+			{services.map((s) => (
+				<a class="bimee-card" href={`/service-${s.id}`} data-cat={s.data.category}>
+					<img src={imgSrc(s.data.image)} alt={s.data.image?.alt ?? s.data.title} loading="lazy" />
+					<div class="bimee-card__body">
+						<span class="bimee-card__meta">{s.data.soon ? "Coming soon" : [s.data.duration, money(s.data.price)].filter(Boolean).join(" · ")}</span>
+						<h3>{s.data.title}</h3>
+						<p>{s.data.short}</p>
+					</div>
+				</a>
+			))}
+		</div>
+	</section>
+</Base>
+
+<script>
+	const buttons = document.querySelectorAll<HTMLButtonElement>("[data-filter]");
+	const cards = document.querySelectorAll<HTMLElement>(".bimee-card[data-cat]");
+	buttons.forEach((btn) =>
+		btn.addEventListener("click", () => {
+			const f = btn.dataset.filter;
+			buttons.forEach((b) => {
+				const on = b === btn;
+				b.setAttribute("aria-pressed", String(on));
+				b.classList.toggle("btn-primary", on);
+				b.classList.toggle("btn-secondary", !on);
+			});
+			cards.forEach((c) => (c.hidden = f !== "all" && c.dataset.cat !== f));
+		}),
+	);
+</script>
