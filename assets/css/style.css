@@ -186,6 +186,8 @@ em, .italic { font-style: italic; }
 .mobile-bar .gold { background: var(--gold-grad); color: var(--ink); }
 body.menu-open .mobile-bar { transform: translateY(160%); }
 body.menu-open { overflow: hidden; }
+/* header sits above the full-screen menu so the burger (now an X) stays tappable */
+body.menu-open .site-header { z-index: 130; background: none; backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; }
 
 /* ---------- Hero ---------- */
 .hero { position: relative; min-height: 100svh; display: grid; align-items: center; color: var(--ivory); background: radial-gradient(1200px 700px at 78% 30%, rgba(29, 90, 80, .85), transparent 62%), radial-gradient(700px 500px at 5% 100%, rgba(150, 114, 42, .28), transparent 60%), linear-gradient(180deg, #08171a 0%, #0b2421 100%); overflow: hidden; isolation: isolate; padding: calc(var(--header-h) + 3rem) 0 7rem; }
