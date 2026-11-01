@@ -22,6 +22,8 @@ Two addresses exist in the source: studio at **3033 W. Parker Rd., Suite 113, Pl
 
 ## 3. Self-hosted server (parked — "set aside until told to move")
 
+> The Docker/API sources (`Dockerfile`, `docker-compose.yml`, `docker/`, `api/`) were **removed from the repo on 2026-11-01**; they remain in git history (commit `e3a7aa9`). The notes below describe the VPS as it was left; it still runs its own copy.
+
 - VPS on Google Cloud, Ubuntu 26.04, 1 GB RAM, IP `35.212.198.107`, SSH user `skincarebimee` (key auth through PuTTY Pageant; keys are in `E:\Documents\keys*`, passphrase-protected — never ask for it; the user loads the key in Pageant). Host key SHA256:`1G0afoaQSNndUeH0Hi9VXd3fRWKVS5/2v7y1DqmGLiw`. Use `plink`/`pscp` from `C:\Program Files\PuTTY` with `-batch -agent -hostkey …`.
 - Stack in `/home/skincarebimee/site` (docker compose): `web` (nginx, port 8080 → public) and `api` (Node 24, zero-dependency `api/server.js`, SQLite in volume `site_bimee-data`). Config in `.env` on the server (`ADMIN_PASSWORD`, `COOKIE_SECURE`, `HOST_PORT`). Currently running: http://35.212.198.107:8080 and `/admin`.
 - Nightly backup: systemd timer `bimee-backup.timer` (03:30 UTC) runs `/home/skincarebimee/backup.sh` → `/home/skincarebimee/backups/*.db.gz`, 14-day retention. Restore steps were given in chat (stop api, gunzip into volume, start api). Backups are only on the same server.
