@@ -58,7 +58,11 @@ const lines = (t: unknown) =>
 		.split("\n")
 		.map((l) => l.trim())
 		.filter(Boolean);
-const fileOf = (image: { src?: string } | undefined) => (image?.src ?? "").split("/").pop() ?? "";
+// Media-library images carry a storage key; legacy seed images only a /assets/img/ path.
+const fileOf = (image: { src?: string; meta?: { storageKey?: string } } | undefined) => {
+	if (image?.meta?.storageKey) return `/_emdash/api/media/file/${image.meta.storageKey}`;
+	return (image?.src ?? "").split("/").pop() ?? "";
+};
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export function toSvc(e: any): Svc {
@@ -126,7 +130,7 @@ ${Object.entries(ICONS)
 const ic = (n: string, cls = "") => `<svg class="${cls}" aria-hidden="true"><use href="#i-${n}"/></svg>`;
 export const money = (p: number | null) => (p === 0 ? "Free" : "$" + p);
 const link = (s: string) => `service-${s}.html`;
-const img = (n: string) => `assets/img/${n}`;
+const img = (n: string) => (n.startsWith("/") ? n : `assets/img/${n}`);
 
 /** Original .html links and relative asset paths become site-root URLs. */
 export function fixUrls(html: string): string {
