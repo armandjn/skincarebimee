@@ -2,3 +2,4 @@ raw/
 .claude/
 node_modules/
 .env
+dist/
