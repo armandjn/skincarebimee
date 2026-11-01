@@ -1,0 +1,17 @@
+---
+import Classic from "../layouts/Classic.astro";
+import { aboutBody, fixUrls } from "../lib/classic";
+import { loadPosts, loadServices } from "../lib/data";
+
+const [S, posts] = await Promise.all([loadServices(), loadPosts()]);
+---
+
+<Classic
+	title="About"
+	description="Meet the esthetician behind Skincare Bimee — a licensed medical esthetician combining medical insight and esthetic expertise to help you achieve healthy, radiant skin."
+	file="about.html"
+	ogImg="owner.jpg"
+	services={S}
+>
+	<Fragment set:html={fixUrls(aboutBody(posts))} />
+</Classic>

@@ -1,65 +1,16 @@
 ---
-import { decodeSlug, getEmDashCollection, getEmDashEntry, getSeoMeta } from "emdash";
-import { PortableText } from "emdash/ui";
-import Base from "../layouts/Base.astro";
-import { imgSrc, lines, money } from "../utils/svc";
+import { decodeSlug } from "emdash";
+import Classic from "../layouts/Classic.astro";
+import { SITE, fixUrls, money, serviceBody } from "../lib/classic";
+import { loadServices } from "../lib/data";
 
 const slug = decodeSlug(Astro.params.slug);
-if (!slug) return Astro.rewrite("/404");
-const { entry: s, cacheHint } = await getEmDashEntry("services", slug);
+const S = await loadServices();
+const s = S.find((x) => x.slug === slug);
 if (!s) return Astro.rewrite("/404");
-if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
-
-const { entries: all } = await getEmDashCollection("services");
-const pairs = lines(s.data.pair)
-	.map((p) => all.find((e) => e.id === p))
-	.filter((e) => !!e);
-const seo = getSeoMeta(s, { siteUrl: Astro.url.origin, path: `/service-${s.id}`, defaultDescription: s.data.lead });
-const meta = s.data.soon ? "Coming soon" : [s.data.duration, money(s.data.price)].filter(Boolean).join(" · ");
-const bookable = !s.data.soon;
+const desc = s.lead + (s.soon ? "" : ` ${s.dur} · ${money(s.price)} at ${SITE.name}, Plano TX.`);
 ---
 
-<Base title={seo.title} pageTitle={s.data.title} description={seo.description} image={imgSrc(s.data.image) ? new URL(imgSrc(s.data.image), Astro.url.origin).href : undefined} canonical={seo.canonical} content={{ collection: "services", id: s.data.id, slug: s.id }}>
-	<header class="container bimee-hero">
-		<p class="eyebrow">{meta}</p>
-		<h1 {...s.edit.title}>{s.data.title}</h1>
-		<p class="lead">{s.data.lead}</p>
-		<div class="actions">
-			{bookable && <a class="btn btn-primary btn-lg" href={`/book-online?service=${s.id}`}>Book this treatment</a>}
-			<a class="btn btn-secondary btn-lg" href="/services">All services</a>
-		</div>
-	</header>
-	<div class="container" style="padding-bottom:2rem">
-		<img class="bimee-hero-img" src={imgSrc(s.data.image)} alt={s.data.image?.alt ?? s.data.title} />
-	</div>
-	<section class="container bimee-two" style="padding-top:2rem">
-		<div class="bimee-prose">
-			<h2>What to expect</h2>
-			<PortableText value={s.data.content} />
-		</div>
-		<div>
-			<h2 style="font-family:var(--font-display);font-weight:500">Ideal for</h2>
-			<ul class="bimee-chips">{lines(s.data.ideal).map((i) => <li>{i}</li>)}</ul>
-			<h2 style="font-family:var(--font-display);font-weight:500;margin-top:2rem">Highlights</h2>
-			<ul class="bimee-info">
-				{lines(s.data.highlights).map((h) => {
-					const [t, d] = h.split("|").map((x) => x.trim());
-					return <li><strong>{t}</strong><small style="text-transform:none;letter-spacing:0;font-size:.95rem">{d}</small></li>;
-				})}
-			</ul>
-		</div>
-	</section>
-	{pairs.length > 0 && (
-		<section class="container">
-			<h2 style="font-family:var(--font-display);font-weight:500;margin-bottom:1rem">Better together</h2>
-			<div class="bimee-grid">
-				{pairs.map((p) => (
-					<a class="bimee-card" href={`/service-${p!.id}`}>
-						<img src={imgSrc(p!.data.image)} alt="" loading="lazy" />
-						<div class="bimee-card__body"><h3>{p!.data.title}</h3><p>{p!.data.short}</p></div>
-					</a>
-				))}
-			</div>
-		</section>
-	)}
-</Base>
+<Classic title={s.name} description={desc} file={`service-${s.slug}.html`} ogImg={s.img} services={S}>
+	<Fragment set:html={fixUrls(serviceBody(S, s))} />
+</Classic>

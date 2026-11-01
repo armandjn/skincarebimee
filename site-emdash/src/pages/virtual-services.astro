@@ -1,0 +1,13 @@
+---
+import Classic from "../layouts/Classic.astro";
+import { fixUrls, virtualBody } from "../lib/classic";
+---
+
+<Classic
+	title="Virtual Skincare Services"
+	description="Virtual skincare services from Skincare Bimee: free skin consultations, skin care parties and skin assessments from the comfort of your home."
+	file="virtual-services.html"
+	ogImg="consultation.jpg"
+>
+	<Fragment set:html={fixUrls(virtualBody())} />
+</Classic>

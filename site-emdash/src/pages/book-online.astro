@@ -1,47 +1,17 @@
 ---
-import { getEmDashCollection } from "emdash";
-import AjaxForm from "../components/AjaxForm.astro";
-import Base from "../layouts/Base.astro";
-import { money } from "../utils/svc";
+import Classic from "../layouts/Classic.astro";
+import { bookBody, fixUrls } from "../lib/classic";
+import { loadServices } from "../lib/data";
 
-const { entries } = await getEmDashCollection("services");
-const bookable = entries.filter((e) => !e.data.soon).sort((a, b) => (a.data.sort ?? 0) - (b.data.sort ?? 0));
-const wanted = Astro.url.searchParams.get("service");
-const selected = bookable.some((e) => e.id === wanted) ? wanted : bookable[0]?.id;
-const slots = ["Morning", "Afternoon", "Evening", "Flexible"];
+const S = await loadServices();
 ---
 
-<Base title="Book Online" description="Book your Skincare Bimee appointment online: facials, chemical peels, microdermabrasion, LED light therapy, Pro Pen Luminfusion and free consultations.">
-	<header class="container bimee-hero">
-		<p class="eyebrow">Book online</p>
-		<h1>Reserve your moment</h1>
-		<p class="lead">Choose a treatment and your preferred time. We will confirm your appointment by phone or email.</p>
-	</header>
-	<section class="container" style="padding-bottom:4rem">
-		<AjaxForm api="/api/book" subject="Appointment request" success="Thank you! We received your request and will confirm your appointment by phone or email." button="Request appointment">
-			<label>Treatment
-				<select name="service" required>
-					{bookable.map((s) => (
-						<option value={s.id} selected={s.id === selected}>{s.data.title} — {s.data.duration || "—"} · {money(s.data.price)}</option>
-					))}
-				</select>
-			</label>
-			<div class="row">
-				<label>Preferred date <input type="date" name="preferred_date" required /></label>
-				<label>Preferred time
-					<select name="preferred_time">{slots.map((t) => <option value={t} selected={t === "Flexible"}>{t}</option>)}</select>
-				</label>
-			</div>
-			<div class="row">
-				<label>First name <input name="first_name" required autocomplete="given-name" /></label>
-				<label>Last name <input name="last_name" autocomplete="family-name" /></label>
-			</div>
-			<div class="row">
-				<label>Email <input name="email" type="email" required autocomplete="email" /></label>
-				<label>Phone <input name="phone" type="tel" autocomplete="tel" /></label>
-			</div>
-			<label>Notes (optional) <textarea name="notes" placeholder="Skin concerns, allergies, questions…"></textarea></label>
-		</AjaxForm>
-		<p style="margin-top:1.5rem">Prefer to call? <a href="tel:+12149440191">(214) 944-0191</a></p>
-	</section>
-</Base>
+<Classic
+	title="Book Online"
+	description="Book your Skincare Bimee appointment online: facials, chemical peels, microdermabrasion, LED light therapy, Pro Pen Luminfusion, lip & eye, back treatments and free consultations."
+	file="book-online.html"
+	ogImg="hallway.jpg"
+	services={S}
+>
+	<Fragment set:html={fixUrls(bookBody(S))} />
+</Classic>

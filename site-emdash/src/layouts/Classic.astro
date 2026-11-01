@@ -1,0 +1,68 @@
+---
+import { EmDashBodyEnd, EmDashBodyStart, EmDashHead } from "emdash/ui";
+import { createPublicPageContext } from "emdash/page";
+import { SITE, footer, fixUrls, header, sprite, type Svc } from "../lib/classic";
+import { loadServices } from "../lib/data";
+
+interface Props {
+	title: string;
+	description: string;
+	/** Current page, in the original "services.html" form, for the active nav link. */
+	file: string;
+	ogImg?: string;
+	hero3d?: boolean;
+	jsonld?: string;
+	services?: Svc[];
+	robots?: string;
+	content?: { collection: string; id: string; slug?: string | null };
+}
+
+const { title, description, file, ogImg = "hero-candles.jpg", hero3d = false, jsonld = "", robots, content } = Astro.props;
+const services = Astro.props.services ?? (await loadServices());
+const full = title.includes("Skincare Bimee") ? title : `${title} | Skincare Bimee`;
+const path = file === "index.html" ? "" : file.replace(".html", "");
+const pageCtx = createPublicPageContext({
+	Astro,
+	kind: content ? "content" : "custom",
+	pageType: "website",
+	title: full,
+	pageTitle: title,
+	description,
+	canonical: `${SITE.url}/${path}`,
+	image: `${SITE.url}/assets/img/${ogImg}`,
+	content,
+	seo: { ogImage: `${SITE.url}/assets/img/${ogImg}`, robots },
+	siteName: "Skincare Bimee",
+});
+const chrome = { head: fixUrls(header(services, file)), foot: fixUrls(footer(services)) };
+---
+
+<!doctype html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<title>{full}</title>
+		<meta name="theme-color" content="#08171a" />
+		<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="/assets/css/style.css" />
+		{hero3d && <script is:inline type="importmap" set:html={JSON.stringify({ imports: { three: "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } })} />}
+		<Fragment set:html={jsonld} />
+		<EmDashHead page={pageCtx} />
+	</head>
+	<body>
+		<EmDashBodyStart page={pageCtx} />
+		<Fragment set:html={sprite} />
+		<Fragment set:html={chrome.head} />
+		<main id="main">
+			<slot />
+		</main>
+		<Fragment set:html={chrome.foot} />
+		<script is:inline src="/assets/js/main.js" defer></script>
+		{hero3d && <script is:inline type="module" src="/assets/js/hero3d.js"></script>}
+		<EmDashBodyEnd page={pageCtx} />
+	</body>
+</html>

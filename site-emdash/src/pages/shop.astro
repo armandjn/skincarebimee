@@ -1,0 +1,13 @@
+---
+import Classic from "../layouts/Classic.astro";
+import { fixUrls, shopBody } from "../lib/classic";
+---
+
+<Classic
+	title="Shop"
+	description="Shop Skincare Bimee gift cards and, soon, at-home facial kits and skincare products."
+	file="shop.html"
+	ogImg="kit.jpg"
+>
+	<Fragment set:html={fixUrls(shopBody())} />
+</Classic>

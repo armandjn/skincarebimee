@@ -8,7 +8,7 @@
 		{
 			"binding": "DB",
 			"database_name": "skincarebimee-emdash",
-			"database_id": "a9754545-8497-4499-b1ce-a930915e00a5",
+			"database_id": "a29c2142-da76-4fa4-bf53-0a77a3ad8e8b",
 		},
 	],
 	// Media lives in KV (free plan). Ids come from the Cloudflare account.

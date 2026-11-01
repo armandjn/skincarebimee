@@ -1,34 +1,13 @@
 ---
-import AjaxForm from "../components/AjaxForm.astro";
-import Base from "../layouts/Base.astro";
+import Classic from "../layouts/Classic.astro";
+import { fixUrls, giftBody } from "../lib/classic";
 ---
 
-<Base title="Gift Card" description="Give the gift of glowing skin. Buy a Skincare Bimee eGift card — choose $50, $100 or $150, add a message and send it by email.">
-	<header class="container bimee-hero">
-		<p class="eyebrow">Gift card</p>
-		<h1>Buy an instant spa gift certificate</h1>
-		<p class="lead">Indulge your loved ones with the gift of relaxation. Treat someone special to rejuvenating treatments amidst serene surroundings.</p>
-	</header>
-	<section class="container bimee-two">
-		<img class="bimee-hero-img" src="/img/gift-hands.jpg" alt="Gift card" style="align-self:start" />
-		<AjaxForm api="/api/gift" subject="Gift card order" success="Thank you! We received your gift card request and will confirm payment and delivery with you directly." button="Request gift card">
-			<label>Amount
-				<select name="amount"><option value="50">$50</option><option value="100" selected>$100</option><option value="150">$150</option></select>
-			</label>
-			<div class="row">
-				<label>Recipient name <input name="recipient_name" maxlength="24" placeholder="Jane" /></label>
-				<label>From <input name="from" maxlength="24" placeholder="Your name" /></label>
-			</div>
-			<div class="row">
-				<label>Recipient email <input name="recipient_email" type="email" placeholder="jane@email.com" /></label>
-				<label>Delivery date <input name="delivery_date" type="date" /></label>
-			</div>
-			<label>Personal message <textarea name="message" maxlength="140" placeholder="Enjoy a little glow-up…"></textarea></label>
-			<div class="row">
-				<label>Your email <input name="your_email" type="email" required placeholder="you@email.com" /></label>
-				<label>Quantity <input name="quantity" type="number" min="1" max="10" value="1" /></label>
-			</div>
-			<p style="margin:0;color:var(--color-muted);font-size:.9rem">We will confirm payment and delivery with you directly.</p>
-		</AjaxForm>
-	</section>
-</Base>
+<Classic
+	title="Gift Card"
+	description="Give the gift of glowing skin. Buy a Skincare Bimee eGift card — choose $50, $100 or $150, add a message and send it by email."
+	file="gift-card.html"
+	ogImg="gift-hands.jpg"
+>
+	<Fragment set:html={fixUrls(giftBody())} />
+</Classic>

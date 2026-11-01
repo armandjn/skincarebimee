@@ -1,27 +1,25 @@
 ---
-import { decodeSlug, getEmDashEntry, getSeoMeta } from "emdash";
+import { decodeSlug } from "emdash";
 import { PortableText } from "emdash/ui";
-import Base from "../layouts/Base.astro";
-import { imgSrc } from "../utils/svc";
+import Classic from "../layouts/Classic.astro";
+import { fixUrls, postShell, toPost } from "../lib/classic";
+import { loadPostEntries } from "../lib/data";
 
 const slug = decodeSlug(Astro.params.slug);
-if (!slug) return Astro.rewrite("/404");
-const { entry: p, cacheHint } = await getEmDashEntry("posts", slug);
-if (!p) return Astro.rewrite("/404");
-if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
-const seo = getSeoMeta(p, { siteUrl: Astro.url.origin, path: `/post-${p.id}`, defaultDescription: p.data.excerpt });
+const entry = (await loadPostEntries()).find((e) => e.id === slug);
+if (!entry) return Astro.rewrite("/404");
+const p = toPost(entry);
+const shell = postShell(p);
 ---
 
-<Base title={seo.title} pageTitle={p.data.title} description={seo.description} image={imgSrc(p.data.image) ? new URL(imgSrc(p.data.image), Astro.url.origin).href : undefined} canonical={seo.canonical} content={{ collection: "posts", id: p.data.id, slug: p.id }}>
-	<header class="container bimee-hero">
-		<p class="eyebrow">{[p.data.tag, p.data.posted, p.data.read_time].filter(Boolean).join(" · ")}</p>
-		<h1 {...p.edit.title}>{p.data.title}</h1>
-	</header>
-	<div class="container" style="padding-bottom:2rem">
-		<img class="bimee-hero-img" src={imgSrc(p.data.image)} alt={p.data.image?.alt ?? p.data.title} />
-	</div>
-	<article class="container bimee-prose" style="padding-bottom:3rem">
-		<PortableText value={p.data.content} />
-		<p style="margin-top:2rem"><a class="btn btn-primary" href="/book-online">Book an appointment</a> <a class="btn btn-secondary" href="/blog">More articles</a></p>
-	</article>
-</Base>
+<Classic
+	title={p.title}
+	description={p.excerpt}
+	file={`post-${p.slug}.html`}
+	ogImg={p.img}
+	content={{ collection: "posts", id: entry.data.id, slug: entry.id }}
+>
+	<Fragment set:html={fixUrls(shell.head)} />
+	<article class="article reveal"><PortableText value={entry.data.content} /></article>
+	<Fragment set:html={fixUrls(shell.tail)} />
+</Classic>

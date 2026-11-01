@@ -890,7 +890,7 @@
 				},
 				{
 					"slug": "highlights",
-					"label": "Highlights (title | description, one per line)",
+					"label": "Highlights (title | description | icon, one per line)",
 					"type": "text"
 				},
 				{
@@ -1105,396 +1105,6 @@
 		}
 	],
 	"content": {
-		"pages": [
-			{
-				"id": "home",
-				"slug": "home",
-				"status": "published",
-				"data": {
-					"title": "Home",
-					"content": [
-						{
-							"_type": "marketing_hero",
-							"_version": 1,
-							"_key": "hero-95",
-							"eyebrow": "Esthetician · Plano, Texas",
-							"eyebrow_url": "/services",
-							"headline": "Be your own kind of beautiful.",
-							"subheadline": "Healthy skin is a combination of science and art. Personalised facials and advanced, medical-grade treatments, crafted around you.",
-							"primary_cta_label": "Book now",
-							"primary_cta_url": "/book-online",
-							"secondary_cta_label": "Explore treatments",
-							"secondary_cta_url": "/services",
-							"image": {
-								"id": "static-hero-candles-jpg",
-								"src": "/img/hero-candles.jpg",
-								"alt": "Candlelit treatment room at Skincare Bimee"
-							},
-							"image_caption": "Cross Roads Salon Suites · Plano, TX"
-						},
-						{
-							"_type": "marketing_split",
-							"_version": 1,
-							"_key": "split-96",
-							"eyebrow": "Meet your esthetician",
-							"headline": "Great skin, from within.",
-							"body": "“From a young age, I was fascinated by the world of skincare and beauty. The transformation I experienced after seeing an esthetician was life-changing and planted the seed for my future career.”\n\nToday I combine medical insight with esthetic expertise — so every treatment is built around your skin, your goals and your safety and well-being.",
-							"points": "Licensed in esthetics, with extensive training in skin types and the latest technology\nSpecialised in advanced treatments like chemical peels and microneedling\nA bespoke plan, crafted after taking the time to understand your skin",
-							"cta_label": "My story",
-							"cta_url": "/about",
-							"image": {
-								"id": "static-owner-jpg",
-								"src": "/img/owner.jpg",
-								"alt": "Your esthetician at Skincare Bimee"
-							},
-							"image_first": true,
-							"anchor_id": "story"
-						},
-						{
-							"_type": "marketing_stats",
-							"_version": 1,
-							"_key": "stats-97",
-							"headline": "Treatments for every skin.",
-							"subheadline": "Simple, transparent pricing.",
-							"stats": [
-								{
-									"value": "8",
-									"label": "Treatments, from facials to advanced resurfacing"
-								},
-								{
-									"value": "$40",
-									"label": "Prices start from"
-								},
-								{
-									"value": "15 min–1 hr",
-									"label": "From a quick add-on to a full ritual"
-								},
-								{
-									"value": "Free",
-									"label": "Virtual skin consultation"
-								}
-							]
-						},
-						{
-							"_type": "marketing_split",
-							"_version": 1,
-							"_key": "split-98",
-							"eyebrow": "Spotlight",
-							"headline": "Pro Pen Luminfusion",
-							"body": "A “supercharged” facial using the Dermalogica Pro Pen and its stainless steel cone nanotips to deliver active ingredients deep into the skin — followed by red light therapy to enhance results.",
-							"points": "Improves skin luminosity\nSmooths fine lines and wrinkles\nTargets the eye area\nCreates an instant glow, with no downtime",
-							"cta_label": "Learn more · $130",
-							"cta_url": "/service-pro-pen-luminfusion",
-							"image": {
-								"id": "static-pro-pen-jpg",
-								"src": "/img/pro-pen.jpg",
-								"alt": "Pro Pen Luminfusion treatment"
-							},
-							"image_first": false
-						},
-						{
-							"_type": "marketing_features",
-							"_version": 1,
-							"_key": "features-99",
-							"eyebrow": "Your journey",
-							"headline": "Four steps to glowing skin.",
-							"subheadline": "We take the time to understand your skin and your goals — then craft a plan just for you.",
-							"features": [
-								{
-									"icon": "chart",
-									"title": "Consult",
-									"description": "Start with a free 15-minute virtual skin consultation from home."
-								},
-								{
-									"icon": "heart",
-									"title": "Customise",
-									"description": "Together we choose the treatments that fit your skin type and goals."
-								},
-								{
-									"icon": "leaf",
-									"title": "Treat",
-									"description": "Relax in our Plano studio while advanced technology does its work."
-								},
-								{
-									"icon": "sun",
-									"title": "Glow",
-									"description": "Leave radiant, with the guidance to keep your results going."
-								}
-							]
-						},
-						{
-							"_type": "marketing_cta",
-							"_version": 1,
-							"_key": "cta-100",
-							"headline": "Give the gift of glowing skin.",
-							"body": "Indulge your loved ones with the gift of relaxation. Choose an amount, add a personal message and we will take care of the rest.",
-							"primary_cta_label": "Gift cards",
-							"primary_cta_url": "/gift-card",
-							"secondary_cta_label": "Book a treatment",
-							"secondary_cta_url": "/book-online",
-							"image": {
-								"id": "static-gift-hands-jpg",
-								"src": "/img/gift-hands.jpg",
-								"alt": "Gift card"
-							}
-						},
-						{
-							"_type": "marketing_contact",
-							"_version": 1,
-							"_key": "contact-101",
-							"eyebrow": "Visit the studio",
-							"headline": "Come say hello.",
-							"options": [
-								{
-									"icon": "location",
-									"title": "Studio",
-									"description": "Cross Roads Salon Suites\n3033 W. Parker Rd., Suite 113\nPlano, TX 75023 · Room 111",
-									"link_label": "Get directions",
-									"link_url": "https://www.google.com/maps?q=3033+W+Parker+Rd+Suite+113+Plano+TX+75023"
-								},
-								{
-									"icon": "phone",
-									"title": "Call us",
-									"description": "Questions or bookings by phone.",
-									"link_label": "(214) 944-0191",
-									"link_url": "tel:+12149440191"
-								},
-								{
-									"icon": "email",
-									"title": "Email",
-									"description": "We reply as soon as we can.",
-									"link_label": "skincarebimee@gmail.com",
-									"link_url": "mailto:skincarebimee@gmail.com"
-								}
-							]
-						}
-					]
-				}
-			},
-			{
-				"id": "about",
-				"slug": "about",
-				"status": "published",
-				"data": {
-					"title": "About",
-					"content": [
-						{
-							"_type": "marketing_hero",
-							"_version": 1,
-							"_key": "hero-102",
-							"eyebrow": "About",
-							"headline": "Where science meets art.",
-							"subheadline": "My mission is to help you achieve healthy, radiant skin — with care, expertise and the latest technology.",
-							"centered": true
-						},
-						{
-							"_type": "marketing_split",
-							"_version": 1,
-							"_key": "split-103",
-							"eyebrow": "My story",
-							"headline": "A passion that began with my own skin.",
-							"body": "From a young age, I was fascinated by the world of skincare and beauty. My passion truly blossomed in high school when I struggled with acne. The transformation I experienced after seeing an esthetician was life-changing and planted the seed for my future career.\n\nI was captivated by the complexities of the human body and the science behind healing. That curiosity led me towards the medical field — but it was my own battle with skin issues that redirected my path to esthetics. Transforming my skin through medical-grade treatments and skincare ignited a passion for helping others achieve the same.\n\nAfter several years, I pursued further education and became licensed in esthetics, training extensively in skin types, treatments and the latest skincare technology. This blend of medical insight and esthetic expertise lets me approach beauty treatments with a unique perspective.\n\nAs a medical esthetician, I specialise in treatments that require a deeper understanding of the skin's structure and healing processes — from advanced chemical peels to microneedling. Now I am here to help you reach your skincare goals while ensuring your safety and well-being.",
-							"image": {
-								"id": "static-owner-jpg",
-								"src": "/img/owner.jpg",
-								"alt": "Your esthetician"
-							},
-							"image_first": true
-						},
-						{
-							"_type": "marketing_features",
-							"_version": 1,
-							"_key": "features-104",
-							"eyebrow": "My approach",
-							"headline": "Healthy skin is a combination of science and art.",
-							"features": [
-								{
-									"icon": "users",
-									"title": "Understand",
-									"description": "We take the time to understand your skin and your goals before anything else."
-								},
-								{
-									"icon": "heart",
-									"title": "Personalise",
-									"description": "A bespoke treatment plan crafted just for you — no one-size-fits-all."
-								},
-								{
-									"icon": "shield",
-									"title": "Protect",
-									"description": "Medical insight and the latest technology, always with your safety first."
-								}
-							]
-						},
-						{
-							"_type": "marketing_cta",
-							"_version": 1,
-							"_key": "cta-105",
-							"headline": "Let’s meet your skin.",
-							"body": "Book a treatment or start with a free virtual consultation.",
-							"primary_cta_label": "Book now",
-							"primary_cta_url": "/book-online",
-							"secondary_cta_label": "Free consultation",
-							"secondary_cta_url": "/book-online?service=skin-consultation",
-							"image": {
-								"id": "static-facial-portrait-jpg",
-								"src": "/img/facial-portrait.jpg",
-								"alt": "Facial portrait"
-							}
-						}
-					]
-				}
-			},
-			{
-				"id": "virtual-services",
-				"slug": "virtual-services",
-				"status": "published",
-				"data": {
-					"title": "Virtual Services",
-					"content": [
-						{
-							"_type": "marketing_hero",
-							"_version": 1,
-							"_key": "hero-106",
-							"eyebrow": "Virtual services",
-							"headline": "Expert skincare, from home.",
-							"subheadline": "Our virtual services offer a convenient way to address your specific needs and achieve healthier, happier skin.",
-							"image": {
-								"id": "static-virtual-laptop-jpg",
-								"src": "/img/virtual-laptop.jpg",
-								"alt": "Virtual consultation on a laptop"
-							},
-							"primary_cta_label": "Book free consultation",
-							"primary_cta_url": "/book-online?service=skin-consultation"
-						},
-						{
-							"_type": "marketing_split",
-							"_version": 1,
-							"_key": "split-107",
-							"eyebrow": "Free · 15 min",
-							"headline": "Skin Consultation",
-							"body": "Explore solutions to your skin concerns and get answers to your questions, all from the comfort of your own home.",
-							"cta_label": "Book now",
-							"cta_url": "/book-online?service=skin-consultation",
-							"image": {
-								"id": "static-consultation-jpg",
-								"src": "/img/consultation.jpg",
-								"alt": "Skin consultation"
-							},
-							"image_first": true
-						},
-						{
-							"_type": "marketing_split",
-							"_version": 1,
-							"_key": "split-108",
-							"eyebrow": "Enquire",
-							"headline": "Skin Care Party",
-							"body": "Gather your friends for a fun, guided skincare experience — together, wherever you are.",
-							"cta_label": "Get in touch",
-							"cta_url": "/contact",
-							"image": {
-								"id": "static-skin-party-jpg",
-								"src": "/img/skin-party.jpg",
-								"alt": "Skin care party"
-							},
-							"image_first": false
-						},
-						{
-							"_type": "marketing_split",
-							"_version": 1,
-							"_key": "split-109",
-							"eyebrow": "Enquire",
-							"headline": "Skin Assessment",
-							"body": "A closer look at your skin type, concerns and routine, with advice to help you move forward.",
-							"cta_label": "Get in touch",
-							"cta_url": "/contact",
-							"image": {
-								"id": "static-virtual-laptop-jpg",
-								"src": "/img/virtual-laptop.jpg",
-								"alt": "Skin assessment online"
-							},
-							"image_first": true
-						},
-						{
-							"_type": "marketing_features",
-							"_version": 1,
-							"_key": "features-110",
-							"eyebrow": "How it works",
-							"headline": "Three simple steps.",
-							"features": [
-								{
-									"icon": "clock",
-									"title": "Book",
-									"description": "Choose a virtual service and a time that suits you."
-								},
-								{
-									"icon": "globe",
-									"title": "Meet online",
-									"description": "Join from home and talk through your skin and your goals."
-								},
-								{
-									"icon": "sun",
-									"title": "Glow on",
-									"description": "Leave with personalised advice, and book in-studio treatments when you are ready."
-								}
-							]
-						}
-					]
-				}
-			},
-			{
-				"id": "shop",
-				"slug": "shop",
-				"status": "published",
-				"data": {
-					"title": "Shop",
-					"content": [
-						{
-							"_type": "marketing_hero",
-							"_version": 1,
-							"_key": "hero-111",
-							"eyebrow": "Shop",
-							"headline": "Skincare, to take home.",
-							"subheadline": "Curated products and gifts, chosen to keep your skin glowing between visits.",
-							"image": {
-								"id": "static-oils-jpg",
-								"src": "/img/oils.jpg",
-								"alt": "Skincare oils"
-							}
-						},
-						{
-							"_type": "marketing_split",
-							"_version": 1,
-							"_key": "split-112",
-							"eyebrow": "Available now",
-							"headline": "eGift Card",
-							"body": "Choose $50, $100 or $150, add a personal message and send it instantly by email — or receive it in your own inbox to print.",
-							"cta_label": "Buy a gift card",
-							"cta_url": "/gift-card",
-							"image": {
-								"id": "static-gift-cert-jpg",
-								"src": "/img/gift-cert.jpg",
-								"alt": "Gift certificate"
-							},
-							"image_first": true
-						},
-						{
-							"_type": "marketing_cta",
-							"_version": 1,
-							"_key": "cta-113",
-							"headline": "More products arriving soon.",
-							"body": "Our at-home facial kits and skincare products are on their way. Let us know and we will tell you first.",
-							"primary_cta_label": "Notify me",
-							"primary_cta_url": "mailto:skincarebimee@gmail.com?subject=Notify%20me%20about%20new%20products",
-							"image": {
-								"id": "static-kit-jpg",
-								"src": "/img/kit.jpg",
-								"alt": "At-home facial kit"
-							}
-						}
-					]
-				}
-			}
-		],
 		"services": [
 			{
 				"id": "facial",
@@ -1549,11 +1159,11 @@
 					"sort": 1,
 					"image": {
 						"id": "static-facial-jpg",
-						"src": "/img/facial.jpg",
+						"src": "/assets/img/facial.jpg",
 						"alt": "Facial"
 					},
 					"ideal": "Ageing\nDry skin\nAcne\nHyperpigmentation",
-					"highlights": "Deep cleanse | Lifts away impurities and prepares skin for treatment.\nExfoliation | Removes dead skin cells for a smoother surface.\nCirculation boost | Encourages a healthy, rested glow.\nMask, moisturiser & SPF | Nourish first, then protect your results.",
+					"highlights": "Deep cleanse | Lifts away impurities and prepares skin for treatment. | drop\nExfoliation | Removes dead skin cells for a smoother surface. | sparkle\nCirculation boost | Encourages a healthy, rested glow. | heart\nMask, moisturiser & SPF | Nourish first, then protect your results. | layers",
 					"pair": "chemical-peels\nmicrodermabraison\nled-light-therapy"
 				}
 			},
@@ -1610,11 +1220,11 @@
 					"sort": 2,
 					"image": {
 						"id": "static-pro-pen-jpg",
-						"src": "/img/pro-pen.jpg",
+						"src": "/assets/img/pro-pen.jpg",
 						"alt": "Pro Pen Luminfusion"
 					},
 					"ideal": "Dull skin\nFine lines & wrinkles\nEye area\nSpecial-event glow",
-					"highlights": "Improves luminosity | Brighter, more radiant-looking skin.\nSmooths fine lines | Softens the look of lines and wrinkles.\nTargets the eye area | Precision care for delicate skin.\nInstant glow | Visible radiance with no downtime.",
+					"highlights": "Improves luminosity | Brighter, more radiant-looking skin. | sun\nSmooths fine lines | Softens the look of lines and wrinkles. | sparkle\nTargets the eye area | Precision care for delicate skin. | eye\nInstant glow | Visible radiance with no downtime. | heart",
 					"pair": "led-light-therapy\nlip-and-eye-treatment\nfacial"
 				}
 			},
@@ -1659,11 +1269,11 @@
 					"sort": 3,
 					"image": {
 						"id": "static-chemical-peel-jpg",
-						"src": "/img/chemical-peel.jpg",
+						"src": "/assets/img/chemical-peel.jpg",
 						"alt": "Chemical Peels"
 					},
 					"ideal": "Uneven tone\nWrinkles\nSun spots\nAcne marks",
-					"highlights": "Texture refinement | A smoother, more even surface.\nTone correction | Targets spots and uneven pigmentation.\nFace, neck & hands | Not just for the face.",
+					"highlights": "Texture refinement | A smoother, more even surface. | layers\nTone correction | Targets spots and uneven pigmentation. | sun\nFace, neck & hands | Not just for the face. | sparkle",
 					"pair": "facial\nmicrodermabraison\nled-light-therapy"
 				}
 			},
@@ -1708,11 +1318,11 @@
 					"sort": 4,
 					"image": {
 						"id": "static-microdermabrasion-jpg",
-						"src": "/img/microdermabrasion.jpg",
+						"src": "/assets/img/microdermabrasion.jpg",
 						"alt": "Microdermabrasion"
 					},
 					"ideal": "Loose or uneven skin\nEarly signs of ageing\nTexture concerns",
-					"highlights": "Collagen support | Helps skin look firmer and smoother.\nQuick 15 minutes | Easy to add to a facial.\nCombines well | Pairs with facials and peels.",
+					"highlights": "Collagen support | Helps skin look firmer and smoother. | heart\nQuick 15 minutes | Easy to add to a facial. | clock\nCombines well | Pairs with facials and peels. | layers",
 					"pair": "facial\nchemical-peels\nled-light-therapy"
 				}
 			},
@@ -1757,11 +1367,11 @@
 					"sort": 5,
 					"image": {
 						"id": "static-led-green-jpg",
-						"src": "/img/led-green.jpg",
+						"src": "/assets/img/led-green.jpg",
 						"alt": "LED Light Therapy"
 					},
 					"ideal": "Acne\nFine lines\nSkin healing",
-					"highlights": "Non-invasive | Relaxing, comfortable and gentle.\nTargeted wavelengths | Different light for different concerns.\n15 minutes | A quick add-on to any visit.",
+					"highlights": "Non-invasive | Relaxing, comfortable and gentle. | sun\nTargeted wavelengths | Different light for different concerns. | sparkle\n15 minutes | A quick add-on to any visit. | clock",
 					"pair": "facial\npro-pen-luminfusion\nchemical-peels"
 				}
 			},
@@ -1806,11 +1416,11 @@
 					"sort": 6,
 					"image": {
 						"id": "static-lip-eye-jpg",
-						"src": "/img/lip-eye.jpg",
+						"src": "/assets/img/lip-eye.jpg",
 						"alt": "Lip & Eye Treatment"
 					},
 					"ideal": "Dry, flaky lips\nPuffy eyes\nDelicate skin",
-					"highlights": "Removes dry skin | Gentle exfoliation for soft lips.\nHydrates | Antioxidants and nourishing serums.\nPlumps & smooths | A fuller, more youthful look.\nRestores shine | Enhances natural colour.",
+					"highlights": "Removes dry skin | Gentle exfoliation for soft lips. | drop\nHydrates | Antioxidants and nourishing serums. | heart\nPlumps & smooths | A fuller, more youthful look. | sparkle\nRestores shine | Enhances natural colour. | sun",
 					"pair": "facial\npro-pen-luminfusion\nled-light-therapy"
 				}
 			},
@@ -1855,11 +1465,11 @@
 					"sort": 7,
 					"image": {
 						"id": "static-back-treatment-jpg",
-						"src": "/img/back-treatment.jpg",
+						"src": "/assets/img/back-treatment.jpg",
 						"alt": "Back Treatment"
 					},
 					"ideal": "Back acne\nClogged pores\nDryness\nRough texture\nUneven tone",
-					"highlights": "Deep cleanse | Clears congestion from pores.\nExfoliation | Smooths rough texture.\nHydration | Comforts dry, tight skin.",
+					"highlights": "Deep cleanse | Clears congestion from pores. | drop\nExfoliation | Smooths rough texture. | sparkle\nHydration | Comforts dry, tight skin. | heart",
 					"pair": "facial\nchemical-peels\nled-light-therapy"
 				}
 			},
@@ -1904,11 +1514,11 @@
 					"sort": 8,
 					"image": {
 						"id": "static-consultation-jpg",
-						"src": "/img/consultation.jpg",
+						"src": "/assets/img/consultation.jpg",
 						"alt": "Skin Consultation"
 					},
 					"ideal": "New clients\nChoosing a treatment\nRoutine questions",
-					"highlights": "Free | No cost, no commitment.\nFrom home | Meet online, wherever you are.\nPersonal advice | Tailored to your concerns.",
+					"highlights": "Free | No cost, no commitment. | gift\nFrom home | Meet online, wherever you are. | laptop\nPersonal advice | Tailored to your concerns. | heart",
 					"pair": "facial\npro-pen-luminfusion\nchemical-peels"
 				}
 			},
@@ -1952,11 +1562,11 @@
 					"sort": 9,
 					"image": {
 						"id": "static-dermaplaning-jpg",
-						"src": "/img/dermaplaning.jpg",
+						"src": "/assets/img/dermaplaning.jpg",
 						"alt": "Dermaplaning"
 					},
 					"ideal": "Dull surface\nPeach fuzz\nSmoother make-up application",
-					"highlights": "Exfoliates | Skims away dead skin cells.\nRemoves peach fuzz | Soft, fine facial hair.\nRadiant finish | A smooth, youthful surface.",
+					"highlights": "Exfoliates | Skims away dead skin cells. | sparkle\nRemoves peach fuzz | Soft, fine facial hair. | blade\nRadiant finish | A smooth, youthful surface. | sun",
 					"pair": "facial\nchemical-peels\nled-light-therapy"
 				}
 			},
@@ -2012,11 +1622,11 @@
 					"sort": 10,
 					"image": {
 						"id": "static-microneedling-jpg",
-						"src": "/img/microneedling.jpg",
+						"src": "/assets/img/microneedling.jpg",
 						"alt": "Microneedling"
 					},
 					"ideal": "Acne scarring\nEnlarged pores\nWrinkles\nStretch marks",
-					"highlights": "Dermal remodelling | Stimulates natural skin repair.\nPrecise | Controlled, microscopic punctures.\nMany concerns | Scars, pores, lines and more.",
+					"highlights": "Dermal remodelling | Stimulates natural skin repair. | layers\nPrecise | Controlled, microscopic punctures. | wand\nMany concerns | Scars, pores, lines and more. | sparkle",
 					"pair": "facial\nchemical-peels\nled-light-therapy"
 				}
 			}
@@ -2034,7 +1644,7 @@
 					"excerpt": "Both refresh your skin, but they work differently. Here is how to choose — or combine them.",
 					"image": {
 						"id": "static-facial-portrait-jpg",
-						"src": "/img/facial-portrait.jpg",
+						"src": "/assets/img/facial-portrait.jpg",
 						"alt": "Facial or chemical peel: which is right for you?"
 					},
 					"content": [
@@ -2149,7 +1759,7 @@
 					"excerpt": "Your back gets as much sun, sweat and friction as your face — yet rarely gets the same care.",
 					"image": {
 						"id": "static-back-treatment-jpg",
-						"src": "/img/back-treatment.jpg",
+						"src": "/assets/img/back-treatment.jpg",
 						"alt": "Back facials: the treatment your skin is missing"
 					},
 					"content": [
@@ -2282,7 +1892,7 @@
 					"excerpt": "A non-invasive treatment that uses light to support clearer, smoother-looking skin.",
 					"image": {
 						"id": "static-led-green-jpg",
-						"src": "/img/led-green.jpg",
+						"src": "/assets/img/led-green.jpg",
 						"alt": "LED light therapy, explained simply"
 					},
 					"content": [
